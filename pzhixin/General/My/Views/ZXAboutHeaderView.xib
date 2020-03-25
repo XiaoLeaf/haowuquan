@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZXAboutHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2v-aq-GP9">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6A-Dk-Zme">
+                            <rect key="frame" x="112.5" y="25" width="150" height="150"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-mc-bOa">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="130" id="QeN-HJ-TQs"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpc-jw-u7F">
+                                    <rect key="frame" x="0.0" y="130" width="150" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ZA7-mc-bOa" firstAttribute="top" secondItem="R6A-Dk-Zme" secondAttribute="top" id="6zt-hE-nk9"/>
+                                <constraint firstAttribute="trailing" secondItem="Kpc-jw-u7F" secondAttribute="trailing" id="9CS-sz-8rh"/>
+                                <constraint firstItem="Kpc-jw-u7F" firstAttribute="leading" secondItem="R6A-Dk-Zme" secondAttribute="leading" id="FpH-fG-D3Z"/>
+                                <constraint firstAttribute="trailing" secondItem="ZA7-mc-bOa" secondAttribute="trailing" id="LRD-Zp-qsl"/>
+                                <constraint firstAttribute="height" constant="150" id="Ok3-RD-ozx"/>
+                                <constraint firstItem="Kpc-jw-u7F" firstAttribute="top" secondItem="ZA7-mc-bOa" secondAttribute="bottom" id="mIf-E2-ZJJ"/>
+                                <constraint firstAttribute="width" constant="150" id="mYX-kb-565"/>
+                                <constraint firstItem="ZA7-mc-bOa" firstAttribute="leading" secondItem="R6A-Dk-Zme" secondAttribute="leading" id="pET-Rz-9rO"/>
+                                <constraint firstAttribute="bottom" secondItem="Kpc-jw-u7F" secondAttribute="bottom" id="rU8-94-Tg5"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="R6A-Dk-Zme" firstAttribute="centerX" secondItem="J2v-aq-GP9" secondAttribute="centerX" id="9tz-El-ldd"/>
+                        <constraint firstItem="R6A-Dk-Zme" firstAttribute="centerY" secondItem="J2v-aq-GP9" secondAttribute="centerY" id="Zif-Fb-IKf"/>
+                        <constraint firstAttribute="height" constant="200" id="nQa-ja-VSx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="J2v-aq-GP9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MRR-f1-HOh"/>
+                <constraint firstItem="J2v-aq-GP9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="MxE-fJ-qzI"/>
+                <constraint firstItem="J2v-aq-GP9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="xEJ-ct-azB"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="logoImg" destination="ZA7-mc-bOa" id="EWU-ul-K8v"/>
+                <outlet property="versionLabel" destination="Kpc-jw-u7F" id="aN8-3a-Oni"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="108.39580209895054"/>
+        </view>
+    </objects>
+</document>

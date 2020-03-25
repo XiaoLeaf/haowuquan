@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZXShareImgCell">
+            <rect key="frame" x="0.0" y="0.0" width="104" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="104" height="96"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ws3-Np-4fS">
+                        <rect key="frame" x="0.0" y="0.0" width="104" height="96"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gva-oA-OzA">
+                        <rect key="frame" x="84" y="0.0" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Dsu-lR-N0x"/>
+                            <constraint firstAttribute="height" constant="20" id="gxc-p4-Mcr"/>
+                        </constraints>
+                        <state key="normal" image="ic_share_pick_nor.png"/>
+                        <state key="selected" image="ic_share_pick_selected.png"/>
+                        <connections>
+                            <action selector="handleTapPickBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="mv9-AU-qev"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ws3-Np-4fS" secondAttribute="trailing" id="PTr-yN-cDt"/>
+                <constraint firstItem="gva-oA-OzA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rjf-6e-5v3"/>
+                <constraint firstItem="ws3-Np-4fS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UJz-UO-SYL"/>
+                <constraint firstAttribute="bottom" secondItem="ws3-Np-4fS" secondAttribute="bottom" id="VZ1-xa-WOP"/>
+                <constraint firstAttribute="trailing" secondItem="gva-oA-OzA" secondAttribute="trailing" id="rGd-BJ-akx"/>
+                <constraint firstItem="ws3-Np-4fS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ynF-FC-ORb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="104" height="96"/>
+            <connections>
+                <outlet property="mainImg" destination="ws3-Np-4fS" id="tcD-9m-FJl"/>
+                <outlet property="pickBtn" destination="gva-oA-OzA" id="cLN-7m-OAa"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="165"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_share_pick_nor.png" width="15" height="15"/>
+        <image name="ic_share_pick_selected.png" width="15" height="15"/>
+    </resources>
+</document>

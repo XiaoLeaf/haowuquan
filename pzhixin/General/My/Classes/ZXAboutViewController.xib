@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXAboutViewController">
+            <connections>
+                <outlet property="aboutTableView" destination="rDG-Z2-Y7W" id="Jah-lf-PHl"/>
+                <outlet property="dealBtn" destination="eXJ-S7-Q4n" id="2uR-LT-GIo"/>
+                <outlet property="rightLab" destination="gGT-Qz-Upe" id="m1o-DO-uoA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rDG-Z2-Y7W">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="595"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Wiq-y4-wgF"/>
+                        <outlet property="delegate" destination="-1" id="fjT-tz-6Dj"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2011-2019 Zhixin technology.All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGT-Qz-Upe">
+                    <rect key="frame" x="0.0" y="632" width="375" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="KCP-br-ovw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXJ-S7-Q4n">
+                    <rect key="frame" x="172.5" y="600" width="30" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="cP6-kf-ifJ"/>
+                        <constraint firstAttribute="width" priority="1" constant="80" id="u8A-QL-ncc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.29411764705882354" green="0.44705882352941173" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="handleTapDealBtnAction:" destination="-1" eventType="touchUpInside" id="HC7-6o-D9h"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rDG-Z2-Y7W" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="5nz-Dy-Xca"/>
+                <constraint firstItem="gGT-Qz-Upe" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="D4p-v0-kws"/>
+                <constraint firstItem="eXJ-S7-Q4n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JKU-i1-NVk"/>
+                <constraint firstItem="gGT-Qz-Upe" firstAttribute="top" secondItem="eXJ-S7-Q4n" secondAttribute="bottom" constant="20" id="VNl-0v-JAm"/>
+                <constraint firstItem="rDG-Z2-Y7W" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Zww-Oi-Vh2"/>
+                <constraint firstItem="gGT-Qz-Upe" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="cfc-is-dzY"/>
+                <constraint firstItem="rDG-Z2-Y7W" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="gmV-Wb-Gch"/>
+                <constraint firstItem="eXJ-S7-Q4n" firstAttribute="top" secondItem="rDG-Z2-Y7W" secondAttribute="bottom" constant="5" id="jXx-lC-Zr7"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="gGT-Qz-Upe" secondAttribute="bottom" constant="23" id="vXN-ob-Oey"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>

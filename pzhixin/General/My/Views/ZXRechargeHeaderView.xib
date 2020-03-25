@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ZXRechargeHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOj-3H-del">
+                    <rect key="frame" x="0.0" y="100" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="BuR-ch-0sd"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KW4-lJ-3Gu">
+                    <rect key="frame" x="328" y="32" width="27" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="afw-FS-uaY"/>
+                        <constraint firstAttribute="width" constant="27" id="gev-17-hWy"/>
+                    </constraints>
+                    <state key="normal" image="icon_communicat.png"/>
+                    <connections>
+                        <action selector="handleTapContactBtnAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="wmB-sY-2Vh"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18850528169" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1q-JM-YJv">
+                    <rect key="frame" x="20" y="32" width="300" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="kcX-oE-SUV"/>
+                    </constraints>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国移动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7b-R6-WdJ">
+                    <rect key="frame" x="20" y="65" width="50" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="5S6-Qz-gQX"/>
+                        <constraint firstAttribute="height" constant="15" id="gUl-Sx-qPR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BOj-3H-del" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="1Z2-Mc-p0i"/>
+                <constraint firstItem="R7b-R6-WdJ" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="20" id="4bV-A0-g1W"/>
+                <constraint firstItem="KW4-lJ-3Gu" firstAttribute="leading" secondItem="e1q-JM-YJv" secondAttribute="trailing" constant="8" id="HmN-fB-e6e"/>
+                <constraint firstItem="R7b-R6-WdJ" firstAttribute="top" secondItem="e1q-JM-YJv" secondAttribute="bottom" constant="6" id="LtN-9y-wz8"/>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="KW4-lJ-3Gu" secondAttribute="trailing" constant="20" id="PH0-0v-aWw"/>
+                <constraint firstItem="KW4-lJ-3Gu" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="32" id="XFY-qf-bg9"/>
+                <constraint firstAttribute="trailing" secondItem="BOj-3H-del" secondAttribute="trailing" id="ezZ-Xi-I1u"/>
+                <constraint firstItem="e1q-JM-YJv" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="20" id="fTF-U6-qcg"/>
+                <constraint firstAttribute="bottom" secondItem="BOj-3H-del" secondAttribute="bottom" constant="4" id="gjb-5Y-3xX"/>
+                <constraint firstItem="e1q-JM-YJv" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="32" id="kjG-re-mhu"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
+            <connections>
+                <outlet property="contactBtn" destination="KW4-lJ-3Gu" id="ERb-Yk-58M"/>
+                <outlet property="flagLab" destination="R7b-R6-WdJ" id="5M8-pZ-Fw1"/>
+                <outlet property="phoneTextField" destination="e1q-JM-YJv" id="zDG-4u-w1D"/>
+            </connections>
+            <point key="canvasLocation" x="139.85507246376812" y="136.94196428571428"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="icon_communicat.png" width="27" height="27"/>
+    </resources>
+</document>

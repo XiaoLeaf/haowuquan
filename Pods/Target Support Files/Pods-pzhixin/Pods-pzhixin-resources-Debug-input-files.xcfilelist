@@ -1,0 +1,22 @@
+${PODS_ROOT}/Target Support Files/Pods-pzhixin/Pods-pzhixin-resources.sh
+${PODS_ROOT}/AliAuthSDK/AlibabaAuthSDK.framework/AlibabaAuthSDK.bundle
+${PODS_ROOT}/AliLinkPartnerSDK/AlibcLinkPartnerSDK.framework/SmartLink.bundle
+${PODS_ROOT}/AlibcTradeSDK/AlibcTradeBiz.framework/NBResource.bundle
+${PODS_ROOT}/Bytedance-UnionAD/Bytedance-UnionAd/Frameworks/BUAdSDK.bundle
+${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle
+${PODS_ROOT}/LBXScan/LBXScan/UI/CodeScan.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle
+${PODS_ROOT}/YBImageBrowser/YBImageBrowser/YBImageBrowser.bundle
+${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png
+${PODS_ROOT}/ZBarSDK/iphone/res/zbar-help.html
+${PODS_ROOT}/ZBarSDK/iphone/res/zbar-helpicons.png
+${PODS_ROOT}/ZBarSDK/iphone/res/zbar-samples.png
+${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle
+${PODS_ROOT}/ZLPhotoBrowser/ZLPhotoBrowser/PhotoBrowser/resource/ZLPhotoActionSheet.xib
+${PODS_ROOT}/ZLPhotoBrowser/ZLPhotoBrowser/PhotoBrowser/resource/ZLPhotoBrowserCell.xib
+${PODS_ROOT}/ZLPhotoBrowser/ZLPhotoBrowser/PhotoBrowser/resource/ZLPhotoBrowser.bundle
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-cancel.png
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-cancel@2x.png
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-refresh.png
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-refresh@2x.png

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ZXSpendCatsCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-fF-ad9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WuZ-Xe-ZRx">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qed-dc-wBL">
+                        <rect key="frame" x="165" y="180" width="45" height="2"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.85098039219999999" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="F3I-hY-WVo"/>
+                            <constraint firstAttribute="width" constant="45" id="JjX-BB-Hri"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZdI-fF-ad9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QIA-G5-bAi"/>
+                    <constraint firstAttribute="bottom" secondItem="qed-dc-wBL" secondAttribute="bottom" constant="5" id="aXZ-b2-k9k"/>
+                    <constraint firstAttribute="trailing" secondItem="ZdI-fF-ad9" secondAttribute="trailing" id="c4X-im-JXU"/>
+                    <constraint firstItem="ZdI-fF-ad9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dFh-I6-UNO"/>
+                    <constraint firstItem="qed-dc-wBL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="fAE-EQ-TQW"/>
+                    <constraint firstAttribute="bottom" secondItem="ZdI-fF-ad9" secondAttribute="bottom" constant="7" id="haW-SH-by0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="catsCollectionView" destination="ZdI-fF-ad9" id="5rC-5W-SiH"/>
+                <outlet property="pageView" destination="qed-dc-wBL" id="dUs-rs-89n"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="136.60714285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

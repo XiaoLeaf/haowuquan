@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="ZXAddressListCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="周杰伦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeX-4M-SqT">
+                        <rect key="frame" x="20" y="10" width="46" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="C1H-Vx-RuO"/>
+                            <constraint firstAttribute="width" priority="1" constant="46" id="TYj-Bx-2wH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="188****8169" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPj-v8-vRQ">
+                        <rect key="frame" x="80" y="10" width="87" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" priority="1" constant="100" id="0UZ-KA-SZC"/>
+                            <constraint firstAttribute="height" constant="20" id="irt-4P-JJX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="福建省厦门市湖里区万达写字楼C3栋" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALv-54-alQ">
+                        <rect key="frame" x="20" y="40" width="305" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZT-Om-IA6">
+                        <rect key="frame" x="335" y="35" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="NnF-v8-kf8"/>
+                            <constraint firstAttribute="height" constant="20" id="lmV-eR-WS1"/>
+                        </constraints>
+                        <state key="normal" image="address_edit.png"/>
+                        <connections>
+                            <action selector="handleTapEditBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LcV-Ic-Q14"/>
+                        </connections>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_addr_def.png" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-F7-Uzc">
+                        <rect key="frame" x="172" y="12.5" width="30" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="5VO-lF-Y7g"/>
+                            <constraint firstAttribute="height" constant="15" id="kWL-Y6-8DQ"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_addr_ht.png" translatesAutoresizingMaskIntoConstraints="NO" id="ewU-kd-o45">
+                        <rect key="frame" x="208" y="12.5" width="30" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="aYF-OL-Mag"/>
+                            <constraint firstAttribute="width" constant="30" id="qOb-j9-bhJ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ALv-54-alQ" secondAttribute="bottom" constant="10" id="1zi-be-4kR"/>
+                    <constraint firstAttribute="trailing" secondItem="jZT-Om-IA6" secondAttribute="trailing" constant="20" id="9nL-d4-BFZ"/>
+                    <constraint firstItem="nPj-v8-vRQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GOL-Mx-cgi"/>
+                    <constraint firstItem="jZT-Om-IA6" firstAttribute="leading" secondItem="ALv-54-alQ" secondAttribute="trailing" constant="10" id="K0n-P1-wth"/>
+                    <constraint firstItem="DeX-4M-SqT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="UdZ-wZ-1Cu"/>
+                    <constraint firstItem="dv8-F7-Uzc" firstAttribute="centerY" secondItem="nPj-v8-vRQ" secondAttribute="centerY" id="VnW-pb-svR"/>
+                    <constraint firstItem="DeX-4M-SqT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="agS-2z-5Kq"/>
+                    <constraint firstItem="ALv-54-alQ" firstAttribute="top" secondItem="DeX-4M-SqT" secondAttribute="bottom" constant="10" id="f9K-GS-Mlz"/>
+                    <constraint firstItem="ewU-kd-o45" firstAttribute="centerY" secondItem="dv8-F7-Uzc" secondAttribute="centerY" id="knl-TW-OY1"/>
+                    <constraint firstItem="dv8-F7-Uzc" firstAttribute="leading" secondItem="nPj-v8-vRQ" secondAttribute="trailing" constant="5" id="nC6-9w-h1z"/>
+                    <constraint firstItem="nPj-v8-vRQ" firstAttribute="leading" secondItem="DeX-4M-SqT" secondAttribute="trailing" constant="14" id="t8e-f7-0uI"/>
+                    <constraint firstItem="ALv-54-alQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="uIs-d7-hYP"/>
+                    <constraint firstItem="jZT-Om-IA6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="35" id="vpe-Bn-p1K"/>
+                    <constraint firstItem="ewU-kd-o45" firstAttribute="leading" secondItem="dv8-F7-Uzc" secondAttribute="trailing" constant="6" id="vw3-Xz-Dcl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="addressLabel" destination="ALv-54-alQ" id="hqi-uI-gGi"/>
+                <outlet property="defImg" destination="dv8-F7-Uzc" id="Gqi-hH-IC9"/>
+                <outlet property="defLeft" destination="nC6-9w-h1z" id="reO-8H-7JP"/>
+                <outlet property="defWidth" destination="5VO-lF-Y7g" id="Mlv-SR-t3D"/>
+                <outlet property="editBtn" destination="jZT-Om-IA6" id="3yB-L5-xrS"/>
+                <outlet property="htImg" destination="ewU-kd-o45" id="L5e-hf-ODa"/>
+                <outlet property="htWidth" destination="qOb-j9-bhJ" id="FNQ-p6-LJC"/>
+                <outlet property="nameLabel" destination="DeX-4M-SqT" id="CnY-K4-hEO"/>
+                <outlet property="phoneLabel" destination="nPj-v8-vRQ" id="ZeK-CM-PVz"/>
+            </connections>
+            <point key="canvasLocation" x="-20" y="141"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="address_edit.png" width="16" height="16"/>
+        <image name="ic_addr_def.png" width="27" height="15"/>
+        <image name="ic_addr_ht.png" width="27" height="15"/>
+    </resources>
+</document>

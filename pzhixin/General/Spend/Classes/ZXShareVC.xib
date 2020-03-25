@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXShareVC">
+            <connections>
+                <outlet property="albumBtn" destination="QCc-u7-hPa" id="Yfq-GC-wr5"/>
+                <outlet property="circleBtn" destination="mWn-R5-ceg" id="kq0-2l-WQ5"/>
+                <outlet property="cpBtn" destination="hcO-9n-TQu" id="F6w-n4-z04"/>
+                <outlet property="shareTable" destination="JVZ-HH-Mf4" id="bEi-p7-aTp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wechatBtn" destination="NlO-fF-EJl" id="LRZ-Um-dqb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JVZ-HH-Mf4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="468"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGf-2j-aid">
+                    <rect key="frame" x="0.0" y="468" width="320" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享至" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY3-FN-fZh">
+                            <rect key="frame" x="0.0" y="10" width="320" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="s7w-s6-E6F"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3I-Q0-11f">
+                            <rect key="frame" x="0.0" y="32" width="320" height="68"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlO-fF-EJl">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="68"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <state key="normal" title="微信好友" image="ic_share_wchat">
+                                        <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="handleTapShareBtnsAction:" destination="-1" eventType="touchUpInside" id="LAh-Ld-bZn"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWn-R5-ceg">
+                                    <rect key="frame" x="80" y="0.0" width="80" height="68"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <state key="normal" title="朋友圈" image="ic_share_circle">
+                                        <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="handleTapShareBtnsAction:" destination="-1" eventType="touchUpInside" id="OF7-J0-gBq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCc-u7-hPa">
+                                    <rect key="frame" x="160" y="0.0" width="80" height="68"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <state key="normal" title="保存至相册" image="ic_share_ablum">
+                                        <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="handleTapShareBtnsAction:" destination="-1" eventType="touchUpInside" id="yQC-Kc-Hil"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-9n-TQu">
+                                    <rect key="frame" x="240" y="0.0" width="80" height="68"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <state key="normal" title="复制文案" image="ic_share_copy">
+                                        <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="handleTapShareBtnsAction:" destination="-1" eventType="touchUpInside" id="041-Xc-yHl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="mWn-R5-ceg" secondAttribute="bottom" id="034-pF-jBW"/>
+                                <constraint firstAttribute="bottom" secondItem="QCc-u7-hPa" secondAttribute="bottom" id="0nA-jF-I1d"/>
+                                <constraint firstAttribute="trailing" secondItem="hcO-9n-TQu" secondAttribute="trailing" id="13H-BR-fEF"/>
+                                <constraint firstAttribute="bottom" secondItem="NlO-fF-EJl" secondAttribute="bottom" id="6zr-TH-ACd"/>
+                                <constraint firstItem="QCc-u7-hPa" firstAttribute="width" secondItem="NlO-fF-EJl" secondAttribute="width" id="A3I-yA-a40"/>
+                                <constraint firstItem="QCc-u7-hPa" firstAttribute="top" secondItem="a3I-Q0-11f" secondAttribute="top" id="FBz-Mt-fss"/>
+                                <constraint firstItem="mWn-R5-ceg" firstAttribute="top" secondItem="a3I-Q0-11f" secondAttribute="top" id="OsV-LJ-r1a"/>
+                                <constraint firstItem="QCc-u7-hPa" firstAttribute="leading" secondItem="mWn-R5-ceg" secondAttribute="trailing" id="SeN-T0-CPD"/>
+                                <constraint firstItem="NlO-fF-EJl" firstAttribute="leading" secondItem="a3I-Q0-11f" secondAttribute="leading" id="VYi-MY-Var"/>
+                                <constraint firstItem="hcO-9n-TQu" firstAttribute="leading" secondItem="QCc-u7-hPa" secondAttribute="trailing" id="YKY-eY-JF9"/>
+                                <constraint firstItem="mWn-R5-ceg" firstAttribute="width" secondItem="NlO-fF-EJl" secondAttribute="width" id="Z4T-vb-6wZ"/>
+                                <constraint firstItem="mWn-R5-ceg" firstAttribute="leading" secondItem="NlO-fF-EJl" secondAttribute="trailing" id="b5W-Gp-74x"/>
+                                <constraint firstAttribute="bottom" secondItem="hcO-9n-TQu" secondAttribute="bottom" id="foj-SL-xKN"/>
+                                <constraint firstItem="NlO-fF-EJl" firstAttribute="top" secondItem="a3I-Q0-11f" secondAttribute="top" id="gkN-ky-hOP"/>
+                                <constraint firstItem="hcO-9n-TQu" firstAttribute="width" secondItem="NlO-fF-EJl" secondAttribute="width" id="r8j-ts-4Kt"/>
+                                <constraint firstItem="hcO-9n-TQu" firstAttribute="top" secondItem="a3I-Q0-11f" secondAttribute="top" id="wNd-fH-SHy"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="rY3-FN-fZh" firstAttribute="leading" secondItem="HGf-2j-aid" secondAttribute="leading" id="BDV-YE-Ch9"/>
+                        <constraint firstAttribute="bottom" secondItem="a3I-Q0-11f" secondAttribute="bottom" id="BW2-1L-wp3"/>
+                        <constraint firstAttribute="height" constant="100" id="CXt-X1-ZD7"/>
+                        <constraint firstItem="a3I-Q0-11f" firstAttribute="top" secondItem="rY3-FN-fZh" secondAttribute="bottom" constant="10" id="MDh-ZQ-55v"/>
+                        <constraint firstItem="rY3-FN-fZh" firstAttribute="top" secondItem="HGf-2j-aid" secondAttribute="top" constant="10" id="PKK-pX-5yR"/>
+                        <constraint firstAttribute="trailing" secondItem="rY3-FN-fZh" secondAttribute="trailing" id="Z5J-u3-wz0"/>
+                        <constraint firstAttribute="trailing" secondItem="a3I-Q0-11f" secondAttribute="trailing" id="ldq-iv-hTN"/>
+                        <constraint firstItem="a3I-Q0-11f" firstAttribute="leading" secondItem="HGf-2j-aid" secondAttribute="leading" id="wQB-Nj-AQa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JVZ-HH-Mf4" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="2km-6g-R2K"/>
+                <constraint firstItem="JVZ-HH-Mf4" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="4LD-WM-6cQ"/>
+                <constraint firstItem="HGf-2j-aid" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Tx1-WM-hkd"/>
+                <constraint firstItem="JVZ-HH-Mf4" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="WgP-Vq-fB0"/>
+                <constraint firstItem="HGf-2j-aid" firstAttribute="top" secondItem="JVZ-HH-Mf4" secondAttribute="bottom" id="d9I-ri-4nR"/>
+                <constraint firstItem="HGf-2j-aid" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="nBk-b1-4ZR"/>
+                <constraint firstItem="HGf-2j-aid" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="nwk-HY-vxd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="138.40000000000001" y="142.57871064467767"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_share_ablum" width="39" height="39"/>
+        <image name="ic_share_circle" width="39" height="39"/>
+        <image name="ic_share_copy" width="39" height="39"/>
+        <image name="ic_share_wchat" width="39" height="39"/>
+    </resources>
+</document>

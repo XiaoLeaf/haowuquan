@@ -1,0 +1,134 @@
+{
+    "data": {
+        "cards": [{
+            "type": "container-oneColumn",
+            "style": {
+                "bgColor": "#ffffff"
+            },
+            "items": [
+                {
+                    "type": "container-scroll",
+                    "id": "MustContainIdCanBeNested!",
+                    "style": {
+                        "indicatorStyle": "dot",
+                        "bgColor": "#FFFFFF",
+                        "indicatorRadius": "3",
+                        "indicatorPosition": "inside",
+                        "align": "left",
+                        "infinite":"true",
+                        "autoScroll":"3000",
+                        "defaultIndicatorColor": "#999999",
+                        "indicatorColor": "#FE560F",
+                        "pageHeight": "190",
+                        "animation": "desc",
+                        "hasIndicator": "true",
+                        "padding": [10, 10, 10, 10]
+                    },
+                    "items": [
+                        {
+                            "type": "image",
+                            "imgUrl": "https://gw.alicdn.com/tps/TB1Nin9JFXXXXbXaXXXXXXXXXXX-224-224.png",
+                            "index": 0
+                        },
+                        {
+                            "imgUrl": "https://img.alicdn.com/tps/i1/TB1DwDoKpXXXXcIXFXXYCR.YFXX-422-200.jpg",
+                            "type": "image",
+                            "index": 1
+                        },
+                        {
+                            "type": "image",
+                            "imgUrl": "https://gw.alicdn.com/tps/TB1Nin9JFXXXXbXaXXXXXXXXXXX-224-224.png",
+                            "index": 2,
+                        },
+                        {
+                            "imgUrl": "https://img.alicdn.com/tps/i1/TB1DwDoKpXXXXcIXFXXYCR.YFXX-422-200.jpg",
+                            "type": "image",
+                            "index": 3
+                        },
+                        {
+                            "type": "image",
+                            "imgUrl": "https://gw.alicdn.com/tps/TB1Nin9JFXXXXbXaXXXXXXXXXXX-224-224.png",
+                            "index": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "container-fiveColumn",
+            "items": [
+                {
+                    "type": "menu",
+                    "name": "淘宝",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/taobao.png",
+                    "index": 0
+                },
+                {
+                    "type": "menu",
+                    "name": "天猫",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/tmall1.png",
+                    "index": 1
+                },
+                {
+                    "type": "menu",
+                    "name": "拼多多",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/pdd.png",
+                    "index": 2
+                },
+                {
+                    "type": "menu",
+                    "name": "发现",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/found.png",
+                    "index": 3
+                },
+                {
+                    "type": "menu",
+                    "name": "发现",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/found.png",
+                    "index": 4
+                },
+                {
+                    "type": "menu",
+                    "name": "淘宝",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/taobao.png",
+                    "index": 5
+                },
+                {
+                    "type": "menu",
+                    "name": "天猫",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/tmall1.png",
+                    "index": 6
+                },
+                {
+                    "type": "menu",
+                    "name": "拼多多",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/pdd.png",
+                    "index": 7
+                },
+                {
+                    "type": "menu",
+                    "name": "发现",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/found.png",
+                    "index": 8
+                },
+                {
+                    "type": "menu",
+                    "name": "发现",
+                    "imgUrl": "https://leaf1202.oss-cn-beijing.aliyuncs.com/found.png",
+                    "index": 9
+                },
+            ]
+        },
+        {
+            "type": "container-oneColumn",
+            "items": [
+                {
+                    "type": "container-oneColumn",
+                    "items": [
+                        
+                    ]
+                }
+            ]
+        }]
+    }
+}

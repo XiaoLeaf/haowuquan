@@ -1,0 +1,6 @@
+module Pods_pzhixin {
+  umbrella header "Pods-pzhixin-umbrella.h"
+
+  export *
+  module * { export * }
+}

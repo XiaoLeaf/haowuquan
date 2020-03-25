@@ -1,0 +1,596 @@
+//
+//  PrefixHeader.pch
+//  pzhixin
+//
+//  Created by zhixin on 2019/6/27.
+//  Copyright © 2019 zhixin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+//LBXScan 如果需要使用LBXScanViewController控制器代码，那么下载了那些模块，请定义对应的宏
+#define LBXScan_Define_Native  //包含native库
+#define LBXScan_Define_ZXing   //包含ZXing库
+#define LBXScan_Define_ZBar   //包含ZBar库
+#define LBXScan_Define_UI     //包含界面库
+
+
+#define IPHONE_X \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
+#pragma mark - NSNotificationCenter
+
+#define APP_BADGE_CHANGE @"ZXPinPinBadgeCountChange"
+
+
+#pragma mark - 路由
+
+#define URL_PREFIX @"zxpinpin://"
+
+#define HOME_VC @"home"
+
+#define SEARCH_VC @"home/search"
+
+#define SCAN_VC @"scan"
+
+#define SORT_VC @"home/sort"
+
+#define CATEGORY_VC @"home/goods_category"
+
+#define SEARCH_RESULT_VC @"home/search_result"
+
+#define GOODS_DETAIL_VC @"home/goods_detail"
+
+#define CREATE_SHARE_VC @"home/share"
+
+#define MESSGAE_VC @"message"
+
+#define SUBJECT_VC @"home/subject"
+
+#define HUD_VC @"toast"
+
+#define COMMUNITY_VC @"community"
+
+#define SHARE_POP_VC @"share"
+
+#define MEMBER_VC @"member"
+
+#define MY_VC @"my"
+
+#define BIND_TBPOPVIEW @"my/bind_tb"
+
+#define SETTING_VC @"my/setting"
+
+#define PERSONAL_VC @"setting/personal"
+
+#define ACCOUNT_VC @"setting/account"
+
+#define ADDRESS_VC @"setting/address"
+
+#define ABOUT_VC @"setting/about"
+
+#define BALANCE_VC @"my/balance"
+
+#define WITHDRAW_VC @"my/withdraw"
+
+#define MODIFY_PAY_ACCOUNT_VC @"my/modify_account"
+
+#define SCORE_VC @"my/score"
+
+#define COUPON_VC @"my/coupon"
+
+#define PROFIT_VC @"my/profit"
+
+#define PROFIT_DETAIL_VC @"my/profit_detail"
+
+#define ORDER_VC @"my/order"
+
+#define FANS_VC @"my/fans"
+
+#define INVITE_VC @"my/invite"
+
+#define RANKING_VC @"my/ranking"
+
+#define PHONE_RECHARGE_VC @"my/phone_recharge"
+
+#define FAV_VC @"my/fav"
+
+#define FOOTPRINT_VC @"my/footprint"
+
+#define CHECK_ORDER_VC @"my/check_order"
+
+#define WEBVIEW_VC @"webview"
+
+#define LOGIN_VC @"login"
+
+#define LOGOUT_SCHEMA @"setting/logout"
+
+#define INVITE_CODE_VC @"invite_code"
+
+#define HOME_ENVELOP_POP @"push_ad"
+
+#define HOME_SEARCH_POP @"push_search"
+
+#define JUMP_TAOBAO_POP @"jump_tb_pop"
+
+#define HOME_GOODS_POP @"home_goods_pop"
+
+#define HOME_TOAST_POP @"home_toast_pop"
+
+#define COMMON_SHARE_VC @"common_share"
+
+#define MINIAPP_SCHEMA @"miniapp"
+
+#define TAOBAO_SCHEMA @"open_tb"
+
+#define REWARD_AD_SCHEMD @"open_reward"
+
+#define H5_SHARE_VC @"h5_share"
+
+#pragma mark - 关键词
+
+#define NETWORK_DISCONNECT @"请检查网络连接"
+
+#define EMPTY_STR @"还没有相关数据哦~"
+
+#define IMAGE_WIDTH 500.0
+
+#define IMAGE_DATA_LENGTH 150.0 * 1024.0
+
+#pragma mark - 淘宝AppKey
+
+#define ALBC_APPKEY @"27704079"
+
+#define TB_UNION_APPKEY @"27767223"
+
+#define RELATION_ID @"2215983756"
+
+#pragma mark - 接口的排序类型
+
+enum AD_PLATFORM
+{
+    TENCENT_AD_PLATFORM = 0, //腾讯广告联盟
+    BU_AD_PLATFORM  //穿山甲广告联盟
+};
+
+enum MATERIAL_SORT
+{
+    TOTAL_SALES_DES = 1,
+    TK_RATE_DES,
+    TK_TOTAL_SALES_ASC,
+    TK_TOTAL_SALES_DES,
+    PRICE_ASC,
+    PRICE_DES
+};
+
+enum SEARCH_GOODS_FROM {
+    FROM_PASTEBOARD = 1,
+    FROM_SCAN,
+    FROM_AUTOMATIC
+};
+
+enum SHARE_TYPE {
+    GOODS_SHARE_TYPE = 1,
+    INVITE_SHARE_TYPE = 2,
+    COMMUNITY_SHARE_TYPE = 3,
+    WEBVIEW_SHARE_TYPE = 9
+};
+
+enum SERVER_CODE {
+    UN_LOGIN = 1001,
+    OTHER_PLACE_LOGIN = 1002,
+    LOGIN_PAST_DUE = 1003,
+    ILLEGALITY_REQUEST = 1004,
+    REQUEST_TIMEOUT = 1005
+};
+
+typedef enum JSOpenPageId {
+    HOME_PAGE = 11, //首页
+    SECOND_PAGE = 1101, //二级商品列表
+    GOODS_DETAIL_PAGE = 1102, //商品详情
+    SORT_PAGE = 1103, //分类
+    SEARCH_PAGE = 1104, //搜索
+    BINDTB_POPPAGE = 1105, //绑定淘宝
+    COMMUNITY_PAGE = 12, //社区
+    WELFARE_PAGE = 13, //福利
+    MEMBER_PAGE = 14, //会员
+    MY_PAGE = 15, //我的
+    LOGIN_PAGE = 1501, //登录
+    INVITECODE_PAGE = 1502, //绑定邀请人
+    PERSONAL_PAGE = 1503, //个人资料
+    ACCOUNT_PAGE = 1504, //账户中心
+    SCORE_PAGE = 1505, //积分
+    COUPON_PAGE = 1506, //优惠券
+    ORDER_PAGE = 1507, //订单
+    EARNING_PAGE = 1508, //收益
+    FANS_PAGE = 1509, //粉丝
+    INVITE_PAGE = 1510, //邀请
+    FAVORITE_PAGE = 1511, //收藏夹
+    FOOTPRINT_PAGE = 1512, //足迹
+    RECHARGE_PAGE = 1513, //话费充值
+    BALANCE_PAGE = 1514, //余额
+    MESSAGE_PAGE = 16, //消息
+} JSOpenPageId;
+
+#pragma mark - 接口地址
+
+//#define ZX_FORMAL_SERVER_URI @"https://api.pzhixin.com"
+
+#define ZX_FORMAL_SERVER_URI @"https://pzhixin.qieweb.com/api"
+
+//微信登录
+#define WX_LOGIN @"/auth/wechat_login"
+
+//获取验证码
+#define VALIDATE_CODE @"/auth/code"
+
+//身份验证
+#define CHECK_CODE @"/auth/check_code"
+
+//个人信息
+#define USER_INDEX @"/user/index"
+
+//手机绑定&&登录
+#define TEL_LOGIN @"/auth/tel_login"
+
+//资料修改-通用
+#define SETTING @"/user/setting"
+
+//修改手机号码
+#define MODIFY_TEL @"/user/modify_tel"
+
+//修改支付密码
+#define MODIFY_PPWD @"/user/modify_ppwd"
+
+//微信解除绑定
+#define UNBIND_WX @"/user/unbind_wx"
+
+//微信绑定
+#define BIND_WX @"/user/bind_wx"
+
+//淘宝授权
+#define TAOBAO_AUTH @"/user/tb_bind"
+
+//淘宝解除授权
+#define TAOBAO_CANCEL_AUTH @"/user/tb_unbind"
+
+//APP初始化
+#define APP_CONFIG @"/index/config"
+
+//猜你喜欢
+#define GUESS_LIKE @"/goods/guess_like"
+
+//分类商品，搜索
+#define MATERIAL_OPTIONAL @"/goods/get_list"
+
+//搜索列表
+#define SEARCH_LIST @"/goods/search_list"
+
+//9.9包邮
+#define FREESHIP @"/tbk/freeship9"
+
+//精选首页
+#define INDEX_START @"/index/start"
+
+//商品详情
+#define GOODS_DETAIL @"/goods/item"
+
+//查券-跳转
+#define GOODS_COUPON @"/goods/get_coupon"
+
+//足迹
+#define FOOTPRINT @"/ud/goods_history_list"
+
+//删除足迹
+#define DEL_FOOTPRINT @"/ud/goods_history_del"
+
+//收藏商品
+#define FAVORITE @"/goods/fav"
+
+//收藏夹
+#define FAVORITE_LIST @"/ud/goods_fav_list"
+
+//删除收藏
+#define DEL_FAVORITE @"/ud/goods_fav_del"
+
+//订单列表
+#define ORDER_LIST @"/ud/order_list"
+
+//订单-查询&认领
+#define ORDER_CLAIM @"/ud/order_claim"
+
+//收益
+#define PROFIT @"/ud/profit"
+
+//收益明细
+#define PROFIT_LIST @"/ud/profit_list"
+
+//提现初始化
+#define CASH_INIT @"/ud/cash_init"
+
+//提现账户设置
+#define BIND_ACCOUNT @"/user/bind_account"
+
+//发起提现
+#define CASH_DO @"/ud/cash_do"
+
+//提现记录
+#define CASH_LIST @"/ud/cash_list"
+
+//撤销提现
+#define CASH_CANCEL @"/ud/cash_cancel"
+
+//余额
+#define UD_MONEY @"/ud/money"
+
+//商品详情页-获取详情
+#define GET_CONTENT @"/goods/get_content"
+
+//绑定推荐人
+#define AUTH_BIND @"/auth/bind"
+
+//邀请初始化
+#define INVITE_CONFIG @"/ud/invite"
+
+//排行榜
+#define RANKING @"/ud/ranking"
+
+//粉丝
+#define FANS @"/ud/fans"
+
+//积分初始化
+#define SCORE_INDEX @"/score/index"
+
+//每日签到
+#define SCORE_SIGNIN @"/score/signin"
+
+//领取礼包
+#define GET_GIFT @"/index/get_gift"
+
+//创建分享
+#define GOODS_SHARE @"/goods/share"
+
+//搜索初始化
+#define SEARCH_INIT @"/goods/search_init"
+
+//收货地址-列表
+#define ADDR @"/ud/addr"
+
+//收货地址-编辑初始化&保存
+#define ADDR_INFO @"/ud/addr_info"
+
+//收获地址-删除，设为默认
+#define ADDR_OPT @"/ud/addr_opt"
+
+//领取积分
+#define SCORE_RECEIVE @"/score/receive"
+
+//积分明细
+#define SCORE_RECORD @"/score/record"
+
+//搜券差收益，URL
+#define SEARCH_URL_COUPON @"/goods/search_coupon_income_url"
+
+//专题定制页
+#define GOODS_SUBJECT @"/goods/subject"
+
+//内容搜券（淘口令、链接、关键字）
+#define SEARCH_GOODS @"/goods/search_scan"
+
+//分享成功回调
+#define SHARE_SUCCEED @"/any/share_callback"
+
+//社区列表
+#define COMMUNITY_GET_LIST @"/community/get_list"
+
+//社区复制淘口令
+#define COMMUNITY_GET_WORD @"/community/get_word"
+
+#pragma mark - 工具类
+
+#import "UtilsMacro.h"
+#import "ZXWeChatUtils.h"
+#import "ZXBannerView.h"
+#import "ZXProgressHUD.h"
+#import "ZXPhotoUtil.h"
+#import "ZXPublicWKWebView.h"
+#import "ZXPhotoBrowser.h"
+#import "ZXDatabaseUtil.h"
+#import "ZXUniversalUtil.h"
+#import "ZXCommonShareVC.h"
+
+#pragma mark - 网络请求工具类
+
+#import "ZXNewService.h"
+#import "ZXHomeIndexHelper.h"
+#import "ZXLoginHelper.h"
+#import "ZXCodeHelper.h"
+#import "ZXPhoneBindLoginHelper.h"
+#import "ZXMyHelper.h"
+#import "ZXSettingHelper.h"
+#import "ZXModifyTelHelper.h"
+#import "ZXModifyPPwdHelper.h"
+#import "ZXUnBindWxHelper.h"
+#import "ZXBindWXHelper.h"
+#import "ZXAppConfigHelper.h"
+#import "ZXGuessLikeHelper.h"
+#import "ZXMaterialOptionalHelper.h"
+#import "ZXGoodsDetailHelper.h"
+#import "ZXTBAuthHelper.h"
+#import "ZXTBCancelAuthHelper.h"
+#import "ZXSearchListHelper.h"
+#import "ZXGoodsCouponHelper.h"
+#import "ZXFootPrintHelper.h"
+#import "ZXDelFootPrintHelper.h"
+#import "ZXFavoriteListHelper.h"
+#import "ZXDelFavoriteHelper.h"
+#import "ZXFavoriteHelper.h"
+#import "ZXOrderListHelper.h"
+#import "ZXProfitListHelper.h"
+#import "ZXCashInitHelper.h"
+#import "ZXBindAccountHelper.h"
+#import "ZXCashDoHelper.h"
+#import "ZXCashListHelper.h"
+#import "ZXCashCancelHelper.h"
+#import "ZXProfitHelper.h"
+#import "ZXUdMoneyHelper.h"
+#import "ZXAuthBindHelper.h"
+#import "ZXInviteConfigHelper.h"
+#import "ZXRankingHelper.h"
+#import "ZXFansHelper.h"
+#import "ZXScoreIndexHelper.h"
+#import "ZXScoreSignHelper.h"
+#import "ZXGetGiftHelper.h"
+#import "ZXShareHelper.h"
+#import "ZXSearchInitHelper.h"
+#import "ZXAddrListHelper.h"
+#import "ZXAddrInfoHelper.h"
+#import "ZXAddrOptHelper.h"
+#import "ZXScoreReceiveHelper.h"
+#import "ZXScoreRecordHelper.h"
+#import "ZXUrlCouponHelper.h"
+#import "ZXSubjectHelper.h"
+#import "ZXSearchHelper.h"
+#import "ZXSucceedShareHelper.h"
+#import "ZXCommunityListHelper.h"
+#import "ZXGetWordHelper.h"
+
+#pragma mark - 图片
+
+#define DEFAULT_HEAD_IMG [UIImage imageNamed:@"ic_default_head"]
+#define DEFAULT_IMG_SMALL [UIImage imageNamed:@"placeholder_img_small"]
+#define DEFAULT_IMG_BIG [UIImage imageNamed:@"placeholder_img_big"]
+
+#pragma mark - MJRefresh Header && Footer
+
+#import "ZXRefreshHeader.h"
+#import "ZXRefreshFooter.h"
+
+#pragma mark - Category
+
+#import "UIView+ZXFont.h"
+#import "UIViewController+ZXFont.h"
+
+#pragma mark - Public
+
+#import "ZXHomeToast.h"
+#import "ZXHomeSearch.h"
+#import "ZXDateView.h"
+#import "ZXTBAuthView.h"
+#import "ZXLabel.h"
+#import "ZXCopyLabel.h"
+#import "ALiTradeWebViewController.h"
+#import "ZXPickerManager.h"
+#import "ZXCustomNavView.h"
+#import "ZXPayPwView.h"
+#import "ZXInviteView.h"
+#import "ZXRedEnvelopView.h"
+#import "ZXFirstFansView.h"
+#import "ZXHomeGoodsToast.h"
+#import "ZXJumpTBView.h"
+#import "ZXDatePicker.h"
+#import "ZXAddressPicker.h"
+#import "ZXCustomFlowLayout.h"
+#import "ZXDealPopView.h"
+#import "ZXAdHelper.h"
+#import "ZXH5ShareVC.h"
+
+#pragma mark - Models
+
+#import "ZXCommonNotice.h"
+#import "ZXMiniApp.h"
+#import "ZXTaoBao.h"
+#import "ZXCommunityCat.h"
+#import "ZXCommunity.h"
+#import "ZXH5Share.h"
+
+#pragma mark - Pods
+
+#import <ReactiveObjC/ReactiveObjC.h>
+//#import <CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout.h>
+#import <Lottie/Lottie.h>
+#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import "GenerateTestUserSig.h"
+#import "TABAnimated.h"
+
+#ifdef DEBUG
+#import "TABAnimatedBall.h"
+#endif
+
+#import <YYImage/YYImage.h>
+#import <WechatOpenSDK/WXApi.h>
+#import <UTDID/UTDevice.h>
+#import <AlibcTradeSDK/AlibcTradeSDK.h>
+#import <iCarousel/iCarousel.h>
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <BlocksKit/BlocksKit.h>
+#import <SDWebImageWebPCoder/SDWebImageWebPCoder.h>
+#import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
+#import <TYPagerController/TYPagerController.h>
+#import <TYPagerController/TYTabPagerBar.h>
+#import <TYPagerController/TYTabPagerController.h>
+#import <TYPagerController/TYTabPagerView.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <UICountingLabel/UICountingLabel.h>
+//#import <TZScrollViewPopGesture/UINavigationController+TZPopGesture.h>
+#import <MGJRouter/MGJRouter.h>
+#import <AFNetworking/AFNetworking.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <TYCyclePagerView/TYCyclePagerView.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
+//#import <YBImageBrowser/YBImageBrowser.h>
+
+//腾讯广告联盟
+#import <GDTMobSDK/GDTSDKConfig.h>
+//腾讯开屏广告
+#import <GDTMobSDK/GDTSplashAd.h>
+//腾讯banner2.0
+#import <GDTMobSDK/GDTUnifiedBannerView.h>
+//腾讯插屏2.0
+#import <GDTMobSDK/GDTUnifiedInterstitialAd.h>
+//腾讯原生模板、自渲染2.0
+#import <GDTMobSDK/GDTUnifiedNativeAd.h>
+//腾讯激励视频
+#import <GDTMobSDK/GDTRewardVideoAd.h>
+
+//穿山甲广告联盟
+#import <BUAdSDK/BUAdSDK.h>
+
+#pragma mark - Vendors
+
+#import "UINavigationController+TZPopGesture.h"
+
+
+#pragma mark - 路由
+
+#import "ZXRouters.h"
+
+#pragma mark - 广告联盟
+
+#define TencentAppID @"1110074649"
+#define TencentSplash @"9030897544569812"
+#define TencentReward @"2050290534270429"
+
+#define BUADAppID @"5043158"
+#define BUADSplash @"887289027"
+#define BUADReward @"942653681"
+
+#endif /* PrefixHeader_pch */
+
+

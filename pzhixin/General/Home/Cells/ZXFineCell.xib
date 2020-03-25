@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ZXFineCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P51-w3-iVv">
+                        <rect key="frame" x="5" y="0.0" width="365" height="257"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_spend_goods_list.png" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-SP-FT7">
+                                <rect key="frame" x="0.0" y="0.0" width="365" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="qcO-Lf-V8B"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hQL-sU-5OV">
+                                <rect key="frame" x="0.0" y="90" width="365" height="155"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TST-nk-5BN">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4HM-s3-JYS">
+                                <rect key="frame" x="160" y="250" width="45" height="2"/>
+                                <color key="backgroundColor" red="0.83529411764705885" green="0.85098039215686272" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="CqT-Xy-Kin"/>
+                                    <constraint firstAttribute="width" constant="45" id="jgl-3R-nTN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EFi-SP-FT7" firstAttribute="leading" secondItem="P51-w3-iVv" secondAttribute="leading" id="9n5-lP-xgt"/>
+                            <constraint firstItem="4HM-s3-JYS" firstAttribute="centerX" secondItem="P51-w3-iVv" secondAttribute="centerX" id="Exf-S6-2Xc"/>
+                            <constraint firstAttribute="bottom" secondItem="hQL-sU-5OV" secondAttribute="bottom" constant="12" id="FL8-x1-Wyn"/>
+                            <constraint firstAttribute="trailing" secondItem="hQL-sU-5OV" secondAttribute="trailing" id="Kqq-vR-VBh"/>
+                            <constraint firstItem="EFi-SP-FT7" firstAttribute="top" secondItem="P51-w3-iVv" secondAttribute="top" id="L2d-uN-9cA"/>
+                            <constraint firstItem="hQL-sU-5OV" firstAttribute="top" secondItem="EFi-SP-FT7" secondAttribute="bottom" id="Rt3-DE-728"/>
+                            <constraint firstAttribute="trailing" secondItem="EFi-SP-FT7" secondAttribute="trailing" id="ToQ-72-g2N"/>
+                            <constraint firstItem="hQL-sU-5OV" firstAttribute="leading" secondItem="P51-w3-iVv" secondAttribute="leading" id="ajW-FU-9Sj"/>
+                            <constraint firstItem="4HM-s3-JYS" firstAttribute="top" secondItem="hQL-sU-5OV" secondAttribute="bottom" constant="5" id="tGW-Pz-8xQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="P51-w3-iVv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="7Ai-PM-CEE"/>
+                    <constraint firstItem="P51-w3-iVv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Tox-5M-TlI"/>
+                    <constraint firstAttribute="bottom" secondItem="P51-w3-iVv" secondAttribute="bottom" id="fPw-kw-rLp"/>
+                    <constraint firstAttribute="trailing" secondItem="P51-w3-iVv" secondAttribute="trailing" constant="5" id="iOm-Q7-NC7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="fineCollectionView" destination="hQL-sU-5OV" id="HCz-J2-74J"/>
+                <outlet property="mainView" destination="P51-w3-iVv" id="bHz-Sx-YUs"/>
+                <outlet property="pageView" destination="4HM-s3-JYS" id="CIO-Z3-dIl"/>
+                <outlet property="titleImg" destination="EFi-SP-FT7" id="SxF-Jt-Xmt"/>
+            </connections>
+            <point key="canvasLocation" x="139.85507246376812" y="136.60714285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_spend_goods_list.png" width="352" height="90"/>
+    </resources>
+</document>

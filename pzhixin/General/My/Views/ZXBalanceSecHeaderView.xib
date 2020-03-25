@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZXBalanceSecHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGb-eM-J8Z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drl-64-EdW">
+                            <rect key="frame" x="16" y="0.0" width="63" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="1" constant="60" id="xeh-2K-hbF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="全部" image="ic_down_arrow.png">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleTapBtnActions:" destination="iN0-l3-epB" eventType="touchUpInside" id="ISb-fq-Cgc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-HJ-57v">
+                            <rect key="frame" x="320" y="0.0" width="39" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="1" constant="1" id="YUe-xh-mzV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="-5" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" image="ic_order_calendar.png">
+                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleTapBtnActions:" destination="iN0-l3-epB" eventType="touchUpInside" id="19k-m4-8ib"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWB-px-SBI">
+                            <rect key="frame" x="0.0" y="39.5" width="375" height="0.5"/>
+                            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="z2x-E1-0Pa"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="hTe-HJ-57v" secondAttribute="trailing" constant="16" id="4ii-T1-PKM"/>
+                        <constraint firstItem="hTe-HJ-57v" firstAttribute="top" secondItem="DGb-eM-J8Z" secondAttribute="top" id="Cur-eJ-Pnr"/>
+                        <constraint firstAttribute="trailing" secondItem="GWB-px-SBI" secondAttribute="trailing" id="TnZ-Vc-haL"/>
+                        <constraint firstAttribute="height" constant="40" id="XQe-dm-TBk"/>
+                        <constraint firstAttribute="bottom" secondItem="GWB-px-SBI" secondAttribute="bottom" id="hHs-Rh-CEN"/>
+                        <constraint firstItem="Drl-64-EdW" firstAttribute="top" secondItem="DGb-eM-J8Z" secondAttribute="top" id="kJF-KF-r65"/>
+                        <constraint firstItem="Drl-64-EdW" firstAttribute="leading" secondItem="DGb-eM-J8Z" secondAttribute="leading" constant="16" id="l87-gI-hTr"/>
+                        <constraint firstAttribute="bottom" secondItem="Drl-64-EdW" secondAttribute="bottom" id="mrF-cG-D0Q"/>
+                        <constraint firstAttribute="bottom" secondItem="hTe-HJ-57v" secondAttribute="bottom" id="nSz-y8-TiR"/>
+                        <constraint firstItem="GWB-px-SBI" firstAttribute="leading" secondItem="DGb-eM-J8Z" secondAttribute="leading" id="vTB-bW-av0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DGb-eM-J8Z" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="4HQ-t9-BWL"/>
+                <constraint firstItem="DGb-eM-J8Z" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cnc-5P-76X"/>
+                <constraint firstItem="DGb-eM-J8Z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jaD-Li-Z4o"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="timeBtn" destination="hTe-HJ-57v" id="MjK-ck-gGZ"/>
+                <outlet property="typeBtn" destination="Drl-64-EdW" id="Cyg-u1-2Ts"/>
+            </connections>
+            <point key="canvasLocation" x="281" y="40"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_down_arrow.png" width="16" height="16"/>
+        <image name="ic_order_calendar.png" width="17" height="17"/>
+    </resources>
+</document>
