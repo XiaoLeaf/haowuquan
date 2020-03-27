@@ -1935,13 +1935,6 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		C82A680E2358451C00363F2B /* Welfare */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Welfare;
-			sourceTree = "<group>";
-		};
 		C832024522D4E574006D7B77 /* YYFPSLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2688,7 +2681,6 @@
 			isa = PBXGroup;
 			children = (
 				C8360F94235DA9F20098EB9D /* jump_tb_line.gif */,
-				C82A680E2358451C00363F2B /* Welfare */,
 				C8B85197234F5492000BAA3A /* header_white.gif */,
 				C8B85196234F5492000BAA3A /* header_white.png */,
 				C8D606E1234CA458008025A4 /* header.png */,
@@ -4549,8 +4541,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = pzhixin/pzhixin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SM6L7NK348;
@@ -4694,8 +4686,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zx.hwq;
-				PRODUCT_NAME = pzhixin;
-				PROVISIONING_PROFILE_SPECIFIER = hwq_Distribution;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "pzhixin/General/Special/Views/pzhixin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -4710,8 +4702,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = pzhixin/pzhixin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = SM6L7NK348;
 				ENABLE_BITCODE = NO;
@@ -4854,8 +4846,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zx.hwq;
-				PRODUCT_NAME = pzhixin;
-				PROVISIONING_PROFILE_SPECIFIER = hwq_Distribution;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "pzhixin/General/Special/Views/pzhixin-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
