@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +17,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-Yc-Uuf">
                     <rect key="frame" x="12" y="15" width="351" height="327"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_no_order.png" translatesAutoresizingMaskIntoConstraints="NO" id="NT0-9K-me6">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_no_order" translatesAutoresizingMaskIntoConstraints="NO" id="NT0-9K-me6">
                             <rect key="frame" x="150.5" y="37" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="5LV-dF-eYN"/>
@@ -142,6 +144,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_check_no_order.png" width="50" height="50"/>
+        <image name="ic_check_no_order" width="50" height="50"/>
     </resources>
 </document>

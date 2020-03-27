@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,21 +20,21 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KX4-Mb-7GM">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bind_wx.png" translatesAutoresizingMaskIntoConstraints="NO" id="wP9-BI-poZ">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bind_wx" translatesAutoresizingMaskIntoConstraints="NO" id="wP9-BI-poZ">
                                     <rect key="frame" x="172" y="15" width="31" height="31"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="31" id="DNh-xE-Kwh"/>
                                         <constraint firstAttribute="height" constant="31" id="h2E-VC-ugL"/>
                                     </constraints>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bind_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="GhO-W9-fjg">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bind_logo" translatesAutoresizingMaskIntoConstraints="NO" id="GhO-W9-fjg">
                                     <rect key="frame" x="92" y="0.0" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="mjE-tj-L9y"/>
                                         <constraint firstAttribute="height" constant="60" id="oY6-Fa-yRU"/>
                                     </constraints>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_default_head.png" translatesAutoresizingMaskIntoConstraints="NO" id="1jp-vt-knd">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_default_head" translatesAutoresizingMaskIntoConstraints="NO" id="1jp-vt-knd">
                                     <rect key="frame" x="223" y="0.0" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="aeE-wG-Y7h"/>
@@ -220,9 +222,9 @@
         </view>
     </objects>
     <resources>
-        <image name="bind_logo.png" width="60" height="60"/>
-        <image name="bind_wx.png" width="31" height="31"/>
-        <image name="ic_default_head.png" width="46" height="49"/>
+        <image name="bind_logo" width="60" height="60"/>
+        <image name="bind_wx" width="31" height="31"/>
+        <image name="ic_default_head" width="46" height="49"/>
         <image name="ic_right_arrow.png" width="16" height="16"/>
     </resources>
 </document>

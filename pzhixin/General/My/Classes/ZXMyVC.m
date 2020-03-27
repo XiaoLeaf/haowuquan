@@ -119,7 +119,7 @@
     }
     //设置渐变色背景
     _gradinentLayer = [CAGradientLayer layer];
-    [_gradinentLayer setColors:@[(__bridge id)[UtilsMacro colorWithHexString:@"FF8B00"].CGColor, (__bridge id)[UtilsMacro colorWithHexString:@"FF5100"].CGColor]];
+    [_gradinentLayer setColors:@[(__bridge id)[UtilsMacro colorWithHexString:@"FF5100"].CGColor, (__bridge id)THEME_COLOR.CGColor]];
     [_gradinentLayer setLocations:@[@0.0, @1.0]];
     [_gradinentLayer setStartPoint:CGPointMake(0.0, 0.0)];
     [_gradinentLayer setEndPoint:CGPointMake(1.0, 0.0)];

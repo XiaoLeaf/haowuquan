@@ -1,22 +1,23 @@
 //
-//  ZXSplashAdVC.m
+//  ZXSplashRootVC.m
 //  pzhixin
 //
-//  Created by zhixin on 2019/12/24.
-//  Copyright © 2019 zhixin. All rights reserved.
+//  Created by zhixin on 2020/3/27.
+//  Copyright © 2020 zhixin. All rights reserved.
 //
 
-#import "ZXSplashAdVC.h"
+#import "ZXSplashRootVC.h"
 
-@interface ZXSplashAdVC ()
+@interface ZXSplashRootVC ()
 
 @end
 
-@implementation ZXSplashAdVC
+@implementation ZXSplashRootVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
+    [self.view setBackgroundColor:[UIColor clearColor]];
 }
 
 /*
@@ -28,9 +29,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
 
 @end

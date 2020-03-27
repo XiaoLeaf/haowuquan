@@ -21,7 +21,7 @@
 #import <SDWebImage/SDWebImage.h>
 #import "ZXMenu.h"
 #import <Masonry/Masonry.h>
-#import "ZXSplashAdVC.h"
+#import "ZXSplashRootVC.h"
 //#import <UserNotifications/UserNotifications.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -57,6 +57,8 @@
 @property (assign, nonatomic) BOOL isHomeTabRoot;
 
 @property (assign, nonatomic) BOOL showingAd;
+
+@property (strong, nonatomic) dispatch_semaphore_t adSema;
 
 @end
 
@@ -113,7 +115,7 @@
     }
     [JPUSHService setLogOFF];
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-    [JPUSHService setupWithOption:launchOptions appKey:@"aef0be04225c6758bd6e45f8" channel:@"App Store" apsForProduction:NO];
+    [JPUSHService setupWithOption:launchOptions appKey:@"b375304d598313ffb8495320" channel:@"App Store" apsForProduction:NO];
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
 //        NSLog(@"resCode:%d  registrationID:%@", resCode, registrationID);
         if (resCode == 0) {
@@ -147,7 +149,7 @@
     [self.window setBackgroundColor:BG_COLOR];
     
 //    //判断是否已展示过引导页
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"%@Logined",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]]) {
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:[   NSString stringWithFormat:@"%@Logined",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]]) {
 //        [self loginSucceed];
 //    } else {
 //        ZXGuideViewController *guide = [[ZXGuideViewController alloc] init];
@@ -618,122 +620,76 @@ void uncaughtExceptionHandler(NSException *exception) {
     [JPUSHService findNotification:identifier];
 }
 
-//#pragma mark - NSNotificationCenter
-//
-//- (void)generalPasteboardChaneged:(NSNotification *)notification {
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    [userDefaults setInteger:[UIPasteboard generalPasteboard].changeCount forKey:@"changecount"];
-//    [userDefaults synchronize];
-//}
-
-//#pragma mark - Touch Event
-//
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [super touchesBegan:touches withEvent:event];
-//    CGPoint touchLocation = [[[event allTouches] anyObject] locationInView:self.window];
-//    CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
-//    if (CGRectContainsPoint(statusBarFrame, touchLocation)) {
-//        [self statusBarTouchedAction];
-//    }
-//}
-//
-//- (void)statusBarTouchedAction {
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"statusBarTappedNotification" object:nil];
-//}
-
 #pragma mark - GDTSplashAdDelegate
 
 - (void)splashAdSuccessPresentScreen:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdFailToPresent:(GDTSplashAd *)splashAd withError:(NSError *)error {
-//    NSLog(@"%s",__FUNCTION__);
     _showingAd = NO;
     [self checkGeneralPasteBoard];
-//    if (!_isHomeTabRoot) {
-//        _isHomeTabRoot = YES;
-//        [self loginSucceed];
-//    }
 }
 
 - (void)splashAdApplicationWillEnterBackground:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdExposured:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdClicked:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
-//    if (!_isHomeTabRoot) {
-//        _isHomeTabRoot = YES;
-//        [self loginSucceed];
-//    }
+    
 }
 
 - (void)splashAdWillClosed:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
-//    if (!_isHomeTabRoot) {
-//        _isHomeTabRoot = YES;
-//        [self loginSucceed];
-//    }
+    
 }
 
 - (void)splashAdClosed:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
     _showingAd = NO;
     [self checkGeneralPasteBoard];
-//    if (!_isHomeTabRoot) {
-//        _isHomeTabRoot = YES;
-//        [self loginSucceed];
-//    }
 }
 
 - (void)splashAdWillPresentFullScreenModal:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdDidPresentFullScreenModal:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdWillDismissFullScreenModal:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
-//    if (!_isHomeTabRoot) {
-//        _isHomeTabRoot = YES;
-//        [self loginSucceed];
-//    }
+    
 }
 
 - (void)splashAdDidDismissFullScreenModal:(GDTSplashAd *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdLifeTime:(NSUInteger)time {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 #pragma mark - BUSplashAdDelegate
 
 - (void)splashAdDidLoad:(BUSplashAdView *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError *)error {
-//    NSLog(@"%s====>%@",__FUNCTION__, error);
     [_splashAdView removeFromSuperview];
     _showingAd = NO;
     [self checkGeneralPasteBoard];
 }
 
 - (void)splashAdWillVisible:(BUSplashAdView *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdDidClick:(BUSplashAdView *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)splashAdDidClose:(BUSplashAdView *)splashAd {
@@ -743,7 +699,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 }
 
 - (void)splashAdWillClose:(BUSplashAdView *)splashAd {
-//    NSLog(@"%s",__FUNCTION__);
+    
 }
 
 @end

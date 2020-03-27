@@ -66,11 +66,11 @@
     if ([[ZXLoginHelper sharedInstance] loginState]) {
         [[[AppDelegate sharedInstance] homeTabBarController] setSelectedIndex:self.tabIndex];
     } else {
-        if (self.tabIndex) {
-            [[[AppDelegate sharedInstance] homeTabBarController] setSelectedIndex:self.tabIndex];
-        } else {
+//        if (self.tabIndex) {
+//            [[[AppDelegate sharedInstance] homeTabBarController] setSelectedIndex:self.tabIndex];
+//        } else {
             [[[AppDelegate sharedInstance] homeTabBarController] setSelectedIndex:0];
-        }
+//        }
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

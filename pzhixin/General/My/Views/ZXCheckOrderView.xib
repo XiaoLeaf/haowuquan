@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,14 +14,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="1084"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_order_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="oPW-8n-j3Y">
-                    <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_order_bg" translatesAutoresizingMaskIntoConstraints="NO" id="oPW-8n-j3Y">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="uUG-t4-qRZ"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入或粘贴淘宝订单号" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sb7-8I-a07">
-                    <rect key="frame" x="57.5" y="64" width="260" height="40"/>
+                    <rect key="frame" x="57.5" y="44" width="260" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="260" id="etL-Qb-uEd"/>
@@ -34,7 +32,7 @@
                     <textInputTraits key="textInputTraits" returnKeyType="search"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAk-K9-Vib">
-                    <rect key="frame" x="57.5" y="119" width="260" height="40"/>
+                    <rect key="frame" x="57.5" y="99" width="260" height="40"/>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.33725490200000002" blue="0.058823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="260" id="hVt-px-M9m"/>
@@ -49,16 +47,16 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSC-TJ-bTu">
-                    <rect key="frame" x="17" y="199" width="341" height="630"/>
+                    <rect key="frame" x="17" y="179" width="341" height="630"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_title1.png" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-Yk-gMA">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_title1" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-Yk-gMA">
                             <rect key="frame" x="159.5" y="80" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="cuB-7U-Ier"/>
                                 <constraint firstAttribute="width" constant="22" id="fKW-g3-rEA"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_title2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kke-59-Z8q">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_title2" translatesAutoresizingMaskIntoConstraints="NO" id="Kke-59-Z8q">
                             <rect key="frame" x="159.5" y="342" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="2J1-NL-gmd"/>
@@ -83,19 +81,19 @@
                             <color key="textColor" red="0.22352941179999999" green="0.53333333329999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_step1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gw7-Q2-ZLY">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_step1" translatesAutoresizingMaskIntoConstraints="NO" id="gw7-Q2-ZLY">
                             <rect key="frame" x="0.0" y="150" width="341" height="167"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="167" id="2WB-Ze-x8b"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_step2.png" translatesAutoresizingMaskIntoConstraints="NO" id="tUc-zH-UJ7">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_step2" translatesAutoresizingMaskIntoConstraints="NO" id="tUc-zH-UJ7">
                             <rect key="frame" x="0.0" y="433" width="341" height="167"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="167" id="wHx-9x-ucG"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_order_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="ykm-8x-Lus">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_order_title" translatesAutoresizingMaskIntoConstraints="NO" id="ykm-8x-Lus">
                             <rect key="frame" x="0.0" y="25" width="341" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="oa7-Gw-GX0"/>
@@ -127,9 +125,9 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sif-Be-0Hm">
-                    <rect key="frame" x="0.0" y="857" width="375" height="16"/>
+                    <rect key="frame" x="0.0" y="837" width="375" height="16"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_rules.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qkp-U7-vmd">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_rules" translatesAutoresizingMaskIntoConstraints="NO" id="Qkp-U7-vmd">
                             <rect key="frame" x="15" y="0.0" width="345" height="16"/>
                         </imageView>
                     </subviews>
@@ -171,12 +169,12 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_check_order_bg.png" width="375" height="249"/>
-        <image name="ic_check_order_title.png" width="341" height="20"/>
-        <image name="ic_check_rules.png" width="341" height="20"/>
-        <image name="ic_check_step1.png" width="341" height="174"/>
-        <image name="ic_check_step2.png" width="341" height="174"/>
-        <image name="ic_check_title1.png" width="29" height="29"/>
-        <image name="ic_check_title2.png" width="29" height="29"/>
+        <image name="ic_check_order_bg" width="375" height="249"/>
+        <image name="ic_check_order_title" width="341" height="20"/>
+        <image name="ic_check_rules" width="341" height="20"/>
+        <image name="ic_check_step1" width="341" height="174"/>
+        <image name="ic_check_step2" width="341" height="174"/>
+        <image name="ic_check_title1" width="29" height="29"/>
+        <image name="ic_check_title2" width="29" height="29"/>
     </resources>
 </document>

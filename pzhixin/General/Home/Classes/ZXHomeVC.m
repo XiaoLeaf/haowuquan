@@ -173,7 +173,7 @@
                     ZXHomeSlides *homeSlides = (ZXHomeSlides *)[self.firstHomeIndex.slides objectAtIndex:i];
                     [self.slidesImgList addObject:homeSlides.img];
                     if ([UtilsMacro whetherIsEmptyWithObject:homeSlides.bg_color]) {
-                        [self.colorList addObject:@"FE560F"];
+                        [self.colorList addObject:@"D5181E"];
                     } else {
                         [self.colorList addObject:homeSlides.bg_color];
                     }

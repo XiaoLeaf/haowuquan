@@ -108,8 +108,6 @@
 		C8328DED23B0B356008BEA0D /* ZXSpendSortSkele.m in Sources */ = {isa = PBXBuildFile; fileRef = C8328DEB23B0B356008BEA0D /* ZXSpendSortSkele.m */; };
 		C8328DEE23B0B356008BEA0D /* ZXSpendSortSkele.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8328DEC23B0B356008BEA0D /* ZXSpendSortSkele.xib */; };
 		C8328DF123B2278A008BEA0D /* ZXAdHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C8328DF023B2278A008BEA0D /* ZXAdHelper.m */; };
-		C8328DF823B24EF0008BEA0D /* ZXSplashAdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8328DF623B24EF0008BEA0D /* ZXSplashAdVC.m */; };
-		C8328DF923B24EF0008BEA0D /* ZXSplashAdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8328DF723B24EF0008BEA0D /* ZXSplashAdVC.xib */; };
 		C8328DFB23B5FA52008BEA0D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8328DFA23B5FA52008BEA0D /* StoreKit.framework */; };
 		C8328DFD23B5FA65008BEA0D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8328DFC23B5FA65008BEA0D /* MobileCoreServices.framework */; };
 		C8328DFF23B5FA75008BEA0D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8328DFE23B5FA75008BEA0D /* CoreMedia.framework */; };
@@ -516,6 +514,7 @@
 		C8C6A0722341EB3B007F1298 /* ZXProfitFaq.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C6A0712341EB3B007F1298 /* ZXProfitFaq.m */; };
 		C8C6A0812341F81A007F1298 /* ZXUdMoneyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C6A0802341F81A007F1298 /* ZXUdMoneyHelper.m */; };
 		C8C6A08423421A2B007F1298 /* ZXUdMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C6A08323421A2B007F1298 /* ZXUdMoney.m */; };
+		C8CC5362242DEEEB005BF341 /* ZXSplashRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CC5361242DEEEB005BF341 /* ZXSplashRootVC.m */; };
 		C8CDD79F230FD30200E9DB41 /* ZXInviteCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CDD79D230FD30200E9DB41 /* ZXInviteCodeViewController.m */; };
 		C8CDD7A0230FD30200E9DB41 /* ZXInviteCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CDD79E230FD30200E9DB41 /* ZXInviteCodeViewController.xib */; };
 		C8D180E823CC0B080076C387 /* ZXDetailRecCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D180E723CC0B080076C387 /* ZXDetailRecCell.m */; };
@@ -819,9 +818,6 @@
 		C8328DEC23B0B356008BEA0D /* ZXSpendSortSkele.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXSpendSortSkele.xib; sourceTree = "<group>"; };
 		C8328DEF23B2278A008BEA0D /* ZXAdHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAdHelper.h; sourceTree = "<group>"; };
 		C8328DF023B2278A008BEA0D /* ZXAdHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAdHelper.m; sourceTree = "<group>"; };
-		C8328DF523B24EF0008BEA0D /* ZXSplashAdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXSplashAdVC.h; sourceTree = "<group>"; };
-		C8328DF623B24EF0008BEA0D /* ZXSplashAdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXSplashAdVC.m; sourceTree = "<group>"; };
-		C8328DF723B24EF0008BEA0D /* ZXSplashAdVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXSplashAdVC.xib; sourceTree = "<group>"; };
 		C8328DFA23B5FA52008BEA0D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C8328DFC23B5FA65008BEA0D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C8328DFE23B5FA75008BEA0D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -1530,6 +1526,8 @@
 		C8C6A0802341F81A007F1298 /* ZXUdMoneyHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXUdMoneyHelper.m; sourceTree = "<group>"; };
 		C8C6A08223421A2B007F1298 /* ZXUdMoney.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXUdMoney.h; sourceTree = "<group>"; };
 		C8C6A08323421A2B007F1298 /* ZXUdMoney.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXUdMoney.m; sourceTree = "<group>"; };
+		C8CC5360242DEEEB005BF341 /* ZXSplashRootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXSplashRootVC.h; sourceTree = "<group>"; };
+		C8CC5361242DEEEB005BF341 /* ZXSplashRootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXSplashRootVC.m; sourceTree = "<group>"; };
 		C8CDD79C230FD30200E9DB41 /* ZXInviteCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXInviteCodeViewController.h; sourceTree = "<group>"; };
 		C8CDD79D230FD30200E9DB41 /* ZXInviteCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXInviteCodeViewController.m; sourceTree = "<group>"; };
 		C8CDD79E230FD30200E9DB41 /* ZXInviteCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXInviteCodeViewController.xib; sourceTree = "<group>"; };
@@ -1928,9 +1926,6 @@
 				C8DF92E7238546EB00C360C1 /* ZXMessageVC.h */,
 				C8DF92E8238546EB00C360C1 /* ZXMessageVC.m */,
 				C8DF92E9238546EB00C360C1 /* ZXMessageVC.xib */,
-				C8328DF523B24EF0008BEA0D /* ZXSplashAdVC.h */,
-				C8328DF623B24EF0008BEA0D /* ZXSplashAdVC.m */,
-				C8328DF723B24EF0008BEA0D /* ZXSplashAdVC.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2893,6 +2888,8 @@
 				C8BB4C9122C36DF700B3BEF1 /* ZXGuideViewController.h */,
 				C8BB4C9222C36DF700B3BEF1 /* ZXGuideViewController.m */,
 				C8BB4C9322C36DF700B3BEF1 /* ZXGuideViewController.xib */,
+				C8CC5360242DEEEB005BF341 /* ZXSplashRootVC.h */,
+				C8CC5361242DEEEB005BF341 /* ZXSplashRootVC.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -3716,7 +3713,6 @@
 				C87559F5232F639F00B7BDE5 /* ic_promote_svip@3x.png in Resources */,
 				C83E06D1237C3E2100ECCFD0 /* ZXAddressPickCell.xib in Resources */,
 				C87559E6232F58E900B7BDE5 /* ic_member_arrow.png in Resources */,
-				C8328DF923B24EF0008BEA0D /* ZXSplashAdVC.xib in Resources */,
 				C8457D81231CF3C4005DBC26 /* ZXFavoriteHeaderView.xib in Resources */,
 				C8DF92E62384E5D900C360C1 /* ZXCatSpecialVC.xib in Resources */,
 				C802B37A233BA706006B91F2 /* ZXSingleCell.xib in Resources */,
@@ -4162,6 +4158,7 @@
 				C8BB4CC222C4A93300B3BEF1 /* StyleDIY.m in Sources */,
 				C87A9D70237A4C6F000953A7 /* TABBaseComponent.m in Sources */,
 				C8F788A62369B3A60046735C /* ZXHomeBannerCell.m in Sources */,
+				C8CC5362242DEEEB005BF341 /* ZXSplashRootVC.m in Sources */,
 				C83861932330744700B6F03C /* ZXShareVC.m in Sources */,
 				C8FF935B235EE5C80013A1A4 /* ZXScoreSignHelper.m in Sources */,
 				C8BB4CD822C4C0CF00B3BEF1 /* ZHFAddTitleAddressView.m in Sources */,
@@ -4267,7 +4264,6 @@
 				C87A9D83237A4C6F000953A7 /* TABRevealChainModel.m in Sources */,
 				C87A9D89237A4C6F000953A7 /* TABPopViewController.m in Sources */,
 				C83E0681237C08DB00ECCFD0 /* ZXAddAddressVC.m in Sources */,
-				C8328DF823B24EF0008BEA0D /* ZXSplashAdVC.m in Sources */,
 				C8B189252373F4FD0006FCCE /* ZXSearchNewHeader.m in Sources */,
 				C8C6A05D2341D529007F1298 /* ZXRankListVC.m in Sources */,
 				C832026D22D5D53A006D7B77 /* ZXFeedbackPickCell.m in Sources */,

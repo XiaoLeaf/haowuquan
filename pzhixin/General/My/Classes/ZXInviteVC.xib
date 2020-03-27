@@ -159,8 +159,8 @@
                                 <constraint firstAttribute="height" constant="12" id="d1o-au-vjj"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                            <state key="normal" title="已成功邀请0人" image="ic_invite_arrow.png">
-                                <color key="titleColor" red="0.99607843137254903" green="0.33725490196078434" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="已成功邀请0人" image="ic_invite_arrow">
+                                <color key="titleColor" red="0.83529411764705885" green="0.094117647058823528" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="handleTapBottomBtnActions:" destination="-1" eventType="touchUpInside" id="s3C-vu-6qh"/>
@@ -221,7 +221,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_invite_arrow.png" width="12" height="12"/>
+        <image name="ic_invite_arrow" width="12" height="12"/>
         <image name="ic_invite_code" width="39" height="39"/>
         <image name="ic_invite_pwd" width="39" height="39"/>
         <image name="ic_share_ablum" width="39" height="39"/>

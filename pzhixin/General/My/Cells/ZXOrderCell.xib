@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,7 +76,7 @@
                                     <constraint firstAttribute="height" constant="0.5" id="EhM-U3-wX5"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_spend_goods_list.png" translatesAutoresizingMaskIntoConstraints="NO" id="ORW-dy-a4w">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_spend_goods_list" translatesAutoresizingMaskIntoConstraints="NO" id="ORW-dy-a4w">
                                 <rect key="frame" x="12" y="50" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="4pW-c3-4Co"/>
@@ -179,6 +179,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_spend_goods_list.png" width="352" height="90"/>
+        <image name="ic_spend_goods_list" width="352" height="90"/>
     </resources>
 </document>

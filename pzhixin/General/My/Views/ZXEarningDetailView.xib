@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,12 +25,12 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bja-wC-sgb">
-                            <rect key="frame" x="15" y="0.5" width="32" height="39.5"/>
+                            <rect key="frame" x="15" y="0.5" width="16" height="39.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" priority="1" constant="46" id="hFm-2D-j99"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" image="ic_down_arrow.png">
+                            <state key="normal" image="ic_down_arrow">
                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -38,7 +38,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hd-RB-55Y">
-                            <rect key="frame" x="57" y="0.5" width="0.0" height="39.5"/>
+                            <rect key="frame" x="41" y="0.5" width="0.0" height="39.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" priority="1" id="wk0-9A-HSg"/>
                             </constraints>
@@ -99,6 +99,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_down_arrow.png" width="16" height="16"/>
+        <image name="ic_down_arrow" width="16" height="16"/>
     </resources>
 </document>

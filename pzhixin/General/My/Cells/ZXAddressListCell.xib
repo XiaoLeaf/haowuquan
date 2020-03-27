@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,19 +49,19 @@
                             <constraint firstAttribute="width" constant="20" id="NnF-v8-kf8"/>
                             <constraint firstAttribute="height" constant="20" id="lmV-eR-WS1"/>
                         </constraints>
-                        <state key="normal" image="address_edit.png"/>
+                        <state key="normal" image="address_edit"/>
                         <connections>
                             <action selector="handleTapEditBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LcV-Ic-Q14"/>
                         </connections>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_addr_def.png" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-F7-Uzc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_addr_def" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-F7-Uzc">
                         <rect key="frame" x="172" y="12.5" width="30" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="5VO-lF-Y7g"/>
                             <constraint firstAttribute="height" constant="15" id="kWL-Y6-8DQ"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_addr_ht.png" translatesAutoresizingMaskIntoConstraints="NO" id="ewU-kd-o45">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_addr_ht" translatesAutoresizingMaskIntoConstraints="NO" id="ewU-kd-o45">
                         <rect key="frame" x="208" y="12.5" width="30" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="aYF-OL-Mag"/>
@@ -102,8 +102,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="address_edit.png" width="16" height="16"/>
-        <image name="ic_addr_def.png" width="27" height="15"/>
-        <image name="ic_addr_ht.png" width="27" height="15"/>
+        <image name="address_edit" width="16" height="16"/>
+        <image name="ic_addr_def" width="27" height="15"/>
+        <image name="ic_addr_ht" width="27" height="15"/>
     </resources>
 </document>

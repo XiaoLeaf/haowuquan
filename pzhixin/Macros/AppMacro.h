@@ -32,7 +32,7 @@
 
 #define APP_KEY @"123456789012345678901234"
 
-#define THEME_COLOR [UIColor colorWithRed:254/255.0 green:86/255.0 blue:15/255.0 alpha:1.0]
+#define THEME_COLOR [UIColor colorWithRed:213/255.0 green:24/255.0 blue:30/255.0 alpha:1.0]
 #define BG_COLOR [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0]
 #define DEDEDE_COLOR [UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1.0]
 #define HOME_TITLE_COLOR [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1.0]

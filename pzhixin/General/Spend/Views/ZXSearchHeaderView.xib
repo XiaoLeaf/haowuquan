@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +28,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="Y6D-T7-Vd0"/>
                     </constraints>
-                    <state key="normal" image="ic_search_delete.png"/>
+                    <state key="normal" image="ic_search_delete"/>
                     <connections>
                         <action selector="handleTapDeleteBtnAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="eDW-Y6-omd"/>
                     </connections>
@@ -42,7 +42,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="换一批" image="ic_search_replace.png">
+                    <state key="normal" title="换一批" image="ic_search_replace">
                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -71,7 +71,7 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="ic_search_delete.png" width="16" height="16"/>
-        <image name="ic_search_replace.png" width="15" height="15"/>
+        <image name="ic_search_delete" width="16" height="16"/>
+        <image name="ic_search_replace" width="15" height="15"/>
     </resources>
 </document>
