@@ -100,7 +100,7 @@
     }];
     
     //Bugly集成
-    [Bugly startWithAppId:@"e203735a81"];
+    [Bugly startWithAppId:@"5c32a9d1d5"];
     
 //    腾讯IM集成
 //    [[TUIKit sharedInstance] setupWithAppId:1400250885];
@@ -115,7 +115,7 @@
     }
     [JPUSHService setLogOFF];
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-    [JPUSHService setupWithOption:launchOptions appKey:@"b375304d598313ffb8495320" channel:@"App Store" apsForProduction:NO];
+    [JPUSHService setupWithOption:launchOptions appKey:@"82b577c4480cdf2db4c98c91" channel:@"App Store" apsForProduction:NO];
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
 //        NSLog(@"resCode:%d  registrationID:%@", resCode, registrationID);
         if (resCode == 0) {
@@ -144,7 +144,7 @@
     [self loginSucceed];
     
     //开屏广告的展示
-    [self showSplashAd];
+//    [self showSplashAd];
 
     [self.window setBackgroundColor:BG_COLOR];
     
@@ -304,6 +304,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 //            [[ZXAppConfigHelper sharedInstance] setLoadingAsset:[[[ZXAppConfigHelper sharedInstance] appConfig] img_res]];
             dispatch_semaphore_signal(sema);
         } error:^(ZXResponse * _Nonnull response) {
+            NSLog(@"response====>%@",response);
 //            [self initAppConfiguration];
             dispatch_semaphore_signal(sema);
             return;

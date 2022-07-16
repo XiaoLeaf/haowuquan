@@ -20,6 +20,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self.logoImg.layer setCornerRadius:10.0];
     [self.userHeadImg.layer setCornerRadius:10.0];
     [self.bindBtn.layer setCornerRadius:2.0];
     

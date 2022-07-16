@@ -188,6 +188,7 @@
     } else {
         [rankListView setIsDefault:NO];
     }
+    [rankListView setTimeKey:[_titleList objectAtIndex:index]];
     rankListView.zxRankListViewDidScroll = ^(UIScrollView * _Nonnull scrollView) {
         CGFloat offsetY = scrollView.contentOffset.y;
         if (offsetY > 0 && offsetY <= HEADER_HEIGHT - DISTANCE) {

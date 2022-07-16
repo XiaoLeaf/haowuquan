@@ -95,13 +95,15 @@
     _community = community;
     
     NSString *content = _community.content;
-    NSMutableAttributedString *contentStr = [[NSMutableAttributedString alloc] initWithString:content];
-    [contentStr addAttributes:[UtilsMacro contentAttributes] range:NSMakeRange(0, content.length)];
+    if (![UtilsMacro whetherIsEmptyWithObject:content]) {
+        NSMutableAttributedString *contentStr = [[NSMutableAttributedString alloc] initWithString:content];
+        [contentStr addAttributes:[UtilsMacro contentAttributes] range:NSMakeRange(0, content.length)];
+        [_contentLabel setAttributedText:contentStr];
+    }
     
     [_headImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_community.author.img]] placeholderImage:nil];
     [_nameLabel setText:[NSString stringWithFormat:@"%@",_community.author.name]];
     [_timeLabel setText:[NSString stringWithFormat:@"%@",_community.s_time]];
-    [_contentLabel setAttributedText:contentStr];
     [_shareBtn setTitle:[NSString stringWithFormat:@"%@",_community.share_times] forState:UIControlStateNormal];
     
     [_shareBtn setNeedsLayout];
@@ -248,28 +250,34 @@
         }];
         [UtilsMacro zxSD_setImageWithURL:[NSURL URLWithString:_community.grow.cover] imageView:_goodsImg placeholderImage:nil options:0 progress:nil completed:nil];
         
-        NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_community.grow.title]]];
-        YYAnimatedImageView *imageView;
-        if ([_community.grow.shop_type integerValue] == 1) {
-            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
-        } else if ([_community.grow.shop_type integerValue] == 2) {
-            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+        if (![UtilsMacro whetherIsEmptyWithObject:_community.grow.title]) {
+            NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_community.grow.title]]];
+            YYAnimatedImageView *imageView;
+            if ([_community.grow.shop_type integerValue] == 1) {
+                imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
+            } else if ([_community.grow.shop_type integerValue] == 2) {
+                imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+            }
+            [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
+            NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
+            [nameAttri insertAttributedString:attachText atIndex:0];
+            [_goodsTitleLab setAttributedText:nameAttri];
         }
-        [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
-        NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
-        [nameAttri insertAttributedString:attachText atIndex:0];
-        [_goodsTitleLab setAttributedText:nameAttri];
         
-        NSString *current = [NSString stringWithFormat:@"￥%@", _community.grow.price];
-        NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:current];
-        [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10.0] range:NSMakeRange(0, 1)];
-        [attri addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:12.0] range:NSMakeRange(1, current.length - 1)];
-        [_curLab setAttributedText:attri];
+        if (![UtilsMacro whetherIsEmptyWithObject:_community.grow.price]) {
+            NSString *current = [NSString stringWithFormat:@"￥%@", _community.grow.price];
+            NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:current];
+            [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10.0] range:NSMakeRange(0, 1)];
+            [attri addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:12.0] range:NSMakeRange(1, current.length - 1)];
+            [_curLab setAttributedText:attri];
+        }
         
-        NSString *originalStr = [NSString stringWithFormat:@"￥%@",_community.grow.ori_price];
-        NSMutableAttributedString *originalAttri = [[NSMutableAttributedString alloc] initWithString:originalStr];
-        [originalAttri addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(0, originalStr.length)];
-        [_oriLab setText:originalStr];
+        if (![UtilsMacro whetherIsEmptyWithObject:_community.grow.ori_price]) {
+            NSString *originalStr = [NSString stringWithFormat:@"￥%@",_community.grow.ori_price];
+            NSMutableAttributedString *originalAttri = [[NSMutableAttributedString alloc] initWithString:originalStr];
+            [originalAttri addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(0, originalStr.length)];
+            [_oriLab setText:originalStr];
+        }
         
         if ([_community.grow.coupon_amount integerValue] == 0 || [_community.grow.coupon_amount isEqualToString:@""]) {
             [_couponLab setText:@""];

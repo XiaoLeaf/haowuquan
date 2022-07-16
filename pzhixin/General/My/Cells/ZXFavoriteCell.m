@@ -57,21 +57,25 @@
         
     }];
     
-    NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"  %@",_favorite.title]]];
-    YYAnimatedImageView *imageView;
-    if ([_favorite.shop_type integerValue] == 1) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
-    } else if ([_favorite.shop_type integerValue] == 2) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+    if (![UtilsMacro whetherIsEmptyWithObject:_favorite.title]) {
+        NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"  %@",_favorite.title]]];
+        YYAnimatedImageView *imageView;
+        if ([_favorite.shop_type integerValue] == 1) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
+        } else if ([_favorite.shop_type integerValue] == 2) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+        }
+        [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
+        NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:12.0] alignment:YYTextVerticalAlignmentCenter];
+        [nameAttri insertAttributedString:attachText atIndex:0];
+        [self.nameLabel setAttributedText:nameAttri];
     }
-    [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
-    NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:12.0] alignment:YYTextVerticalAlignmentCenter];
-    [nameAttri insertAttributedString:attachText atIndex:0];
-    [self.nameLabel setAttributedText:nameAttri];
     
-    NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"券后价 %@", _favorite.price]];
-    [priceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0] range:NSMakeRange(0, 3)];
-    [self.priceLab setAttributedText:priceStr];
+    if (![UtilsMacro whetherIsEmptyWithObject:_favorite.price]) {
+        NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"券后价 %@", _favorite.price]];
+        [priceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0] range:NSMakeRange(0, 3)];
+        [self.priceLab setAttributedText:priceStr];
+    }
     
     [self.originalLab setText:[NSString stringWithFormat:@"原价 %@", _favorite.ori_price]];
     [self.countLab setText:[NSString stringWithFormat:@"销量 %@", _favorite.volume]];

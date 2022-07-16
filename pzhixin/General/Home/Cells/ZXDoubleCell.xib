@@ -279,7 +279,7 @@
                 <outlet property="rightNameView" destination="aPl-Np-yev" id="dhE-f5-m4T"/>
                 <outlet property="rightOrignal" destination="clP-mv-fq6" id="DW8-f6-E5Z"/>
             </connections>
-            <point key="canvasLocation" x="138.40579710144928" y="152.67857142857142"/>
+            <point key="canvasLocation" x="-66" y="107"/>
         </tableViewCell>
     </objects>
 </document>

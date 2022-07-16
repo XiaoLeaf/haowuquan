@@ -95,7 +95,8 @@
             make.left.right.top.bottom.mas_equalTo(0.0);
         }];
         ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshFanList)];
-        [refreshHeader.stateLab setTextColor:COLOR_999999];
+        [refreshHeader setTimeKey:[NSString stringWithFormat:@"ZXFansView%zd",_fansType]];
+//        [refreshHeader.stateLab setTextColor:COLOR_999999];
         _fansTable.mj_header = refreshHeader;
     }
 }

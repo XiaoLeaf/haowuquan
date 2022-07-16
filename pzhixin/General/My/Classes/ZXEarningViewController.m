@@ -158,6 +158,7 @@
         
         _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshProfit)];
         [_refreshHeader setLight:YES];
+        [_refreshHeader setTimeKey:@"ZXEarningViewController"];
         [earningTableView setMj_header:_refreshHeader];
         
         _isFirst = YES;

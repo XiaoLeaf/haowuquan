@@ -19,6 +19,7 @@
 #import "ZXPagerMenuCell.h"
 #import <Masonry/Masonry.h>
 #import "ZXCatSpecialVC.h"
+#import <CoreTelephony/CTCellularData.h>
 
 @interface ZXNewHomeViewController () <TYTabPagerBarDelegate, TYTabPagerBarDataSource, TYTabPagerControllerDelegate,TYTabPagerControllerDataSource>
 
@@ -98,13 +99,6 @@
             case 1:
             {
                 [[ZXRouters sharedInstance] openPageWithUrl:[NSString stringWithFormat:@"%@%@", URL_PREFIX, [[[[[ZXAppConfigHelper sharedInstance] appConfig] h5] message] url_schema]] andUserInfo:nil viewController:weakSelf];
-//                [[ZXRouters sharedInstance] openPageWithUrl:[NSString stringWithFormat:@"%@%@", URL_PREFIX, COMMUNITY_VC] andUserInfo:nil viewController:weakSelf];
-//                [[ZXRouters sharedInstance] openPageWithUrl:[NSString stringWithFormat:@"%@%@", URL_PREFIX, REWARD_AD_SCHEMD] andUserInfo:nil viewController:weakSelf];
-//                NSString *productID = @"57001961153";
-//                NSString *urlStr = [NSString stringWithFormat:@"openApp.jdMobile://virtual?params={\"category\":\"jump\",\"des\":\"productDetail\",\"skuId\":\"%@\",\"sourceType\":\"homefloor\",\"sourceValue\":\"4384\",\"landPageId\":\"jshop.cx.mobile\"}", productID];
-//                NSURL *newUrl = [NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-////                NSURL *url = [NSURL URLWithString:@"openapp.jdMobile://"];
-//                [[UIApplication sharedApplication] openURL:newUrl options:@{} completionHandler:nil];
             }
                 break;
                 
@@ -117,27 +111,13 @@
     };
     [self.view addSubview:_customNav];
     
-    //从本地存储的初始化信息获取数据
-    [self.bgView sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] index_header_bg]]];
-    self.classifyList = [[NSMutableArray alloc] init];
-    NSArray *resultList = [[NSArray alloc] initWithArray:[[[ZXAppConfigHelper sharedInstance] appConfig] cats]];
-    for (int i = 0; i < [resultList count]; i++) {
-        ZXClassify *classify = (ZXClassify *)[resultList objectAtIndex:i];
-        [self.classifyList addObject:classify];
+    //首次安装APP时，监测网络状态
+    if (![[ZXAppConfigHelper sharedInstance] appConfig]) {
+        [self getTheCurrentNetWorkState];
+    } else {
+        [self initHomeDatas];
+        [self reloadData];
     }
-    [[ZXAppConfigHelper sharedInstance] setClassifyList:self.classifyList];
-    self.menuList = [[NSMutableArray alloc] init];
-    self.titleList = [[NSMutableArray alloc] init];
-    self.typeList = [[NSMutableArray alloc] init];
-    
-    NSArray *menuResult = [[NSArray alloc] initWithArray:[[[ZXAppConfigHelper sharedInstance] appConfig] menus]];
-    for (int i = 0; i < [menuResult count]; i++) {
-        ZXMenu *menu = (ZXMenu *)[menuResult objectAtIndex:i];
-        [self.titleList addObject:menu.name];
-        [self.typeList addObject:menu.type];
-        [self.menuList addObject:menu];
-    }
-    [self reloadData];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -174,6 +154,44 @@
 }
 */
 
+#pragma mark - 获取当前网络状态
+
+- (void)getTheCurrentNetWorkState {
+    CTCellularData *cellularData = [[CTCellularData alloc] init];
+    cellularData.cellularDataRestrictionDidUpdateNotifier = ^(CTCellularDataRestrictedState state) {
+        //获取联网状态
+        switch (state) {
+            case kCTCellularDataRestricted:
+            {
+//                NSLog(@"网络状态====>kCTCellularDataRestricted");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self initAppConfiguration];
+                });
+            }
+                break;
+            case kCTCellularDataNotRestricted:
+            {
+//                NSLog(@"网络状态====>kCTCellularDataNotRestricted");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self initAppConfiguration];
+                });
+            }
+                break;
+            case kCTCellularDataRestrictedStateUnknown:
+            {
+//                NSLog(@"网络状态====>kCTCellularDataRestrictedStateUnknown");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self initAppConfiguration];
+                });
+            }
+                break;
+                
+            default:
+                break;
+        }
+    };
+}
+
 #pragma mark - NSNotificationCenter
 
 //改变消息按钮badge的显隐
@@ -187,40 +205,42 @@
 
 #pragma mark - Private Methods
 
+//初始化数据
+- (void)initHomeDatas {
+    [self.bgView sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] index_header_bg]]];
+    self.classifyList = [[NSMutableArray alloc] init];
+    NSArray *resultList = [[NSArray alloc] initWithArray:[[[ZXAppConfigHelper sharedInstance] appConfig] cats]];
+    for (int i = 0; i < [resultList count]; i++) {
+        ZXClassify *classify = (ZXClassify *)[resultList objectAtIndex:i];
+        [self.classifyList addObject:classify];
+    }
+    [[ZXAppConfigHelper sharedInstance] setClassifyList:self.classifyList];
+    self.menuList = [[NSMutableArray alloc] init];
+    self.titleList = [[NSMutableArray alloc] init];
+    self.typeList = [[NSMutableArray alloc] init];
+    
+    NSArray *menuResult = [[NSArray alloc] initWithArray:[[[ZXAppConfigHelper sharedInstance] appConfig] menus]];
+    for (int i = 0; i < [menuResult count]; i++) {
+        ZXMenu *menu = (ZXMenu *)[menuResult objectAtIndex:i];
+        [self.titleList addObject:menu.name];
+        [self.typeList addObject:menu.type];
+        [self.menuList addObject:menu];
+    }
+    [self reloadData];
+}
+
 //App初始化配置信息
 - (void)initAppConfiguration {
     if ([UtilsMacro isCanReachableNetWork]) {
 //        [ZXProgressHUD loadingNoMask];
         [[ZXAppConfigHelper sharedInstance] fetchAPPConfigCompletion:^(ZXResponse * _Nonnull response) {
             [ZXProgressHUD hideAllHUD];
-//            NSLog(@"response:%@",response.data);
             ZXAppConfig *appConfig = [ZXAppConfig yy_modelWithJSON:response.data];
             [[ZXAppConfigHelper sharedInstance] setAppConfig:appConfig];
-            
-            [self.bgView sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] index_header_bg]]];
-            self.classifyList = [[NSMutableArray alloc] init];
-            NSArray *resultList = [[NSArray alloc] initWithArray:[[[ZXAppConfigHelper sharedInstance] appConfig] cats]];
-            for (int i = 0; i < [resultList count]; i++) {
-                ZXClassify *classify = (ZXClassify *)[resultList objectAtIndex:i];
-                [self.classifyList addObject:classify];
-            }
-            [[ZXAppConfigHelper sharedInstance] setClassifyList:self.classifyList];
-            self.menuList = [[NSMutableArray alloc] init];
-            self.titleList = [[NSMutableArray alloc] init];
-            self.typeList = [[NSMutableArray alloc] init];
-            
-            NSArray *menuResult = [[NSArray alloc] initWithArray:[[[ZXAppConfigHelper sharedInstance] appConfig] menus]];
-            for (int i = 0; i < [menuResult count]; i++) {
-                ZXMenu *menu = (ZXMenu *)[menuResult objectAtIndex:i];
-                [self.titleList addObject:menu.name];
-                [self.typeList addObject:menu.type];
-                [self.menuList addObject:menu];
-            }
-            [self reloadData];
-            
+
             //保存loading资源图片及预加载
             [UtilsMacro preloadLoadingAssetsWithLoadingAsset:[[[ZXAppConfigHelper sharedInstance] appConfig] img_res]];
-            [[ZXAppConfigHelper sharedInstance] setLoadingAsset:[[[ZXAppConfigHelper sharedInstance] appConfig] img_res]];
+            [self initHomeDatas];
         } error:^(ZXResponse * _Nonnull response) {
             [ZXProgressHUD loadFailedWithMsg:response.info];
             return;
@@ -407,53 +427,53 @@
                 [weakSelf.bgView setBackgroundColor:[UtilsMacro colorWithHexString:[weakSelf.colorList objectAtIndex:target]]];
             };
             _homeVC.zxHomeTableDidScroll = ^(UIScrollView * _Nonnull scrollView) {
-                if (scrollView.contentOffset.y > 0) {
-                    return;
-                }
-                if (scrollView.contentOffset.y < weakSelf.lastPoint.y) {
-                    if (scrollView.contentOffset.y == 0) {
-                        [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0);
-                        }];
-                    } else {
-                        if (scrollView.contentOffset.y == -65.0) {
-                            [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
-                                [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
-                                    make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + fabs(ceil(scrollView.contentOffset.y)));
-                                }];
-                                [weakSelf.view layoutIfNeeded];
-                            }];
-                        } else {
-                            [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
-                                make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + fabs(ceil(scrollView.contentOffset.y)));
-                            }];
-                        }
-                    }
-                } else {
-                    [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
-                        if (scrollView.contentOffset.y == 0) {
-                            [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
-                                make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0);
-                            }];
-                        } else {
-                            [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
-                                make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + fabs(ceil(scrollView.contentOffset.y)));
-                            }];
-                        }
-                        [weakSelf.view layoutIfNeeded];
-                    }];
-                }
+//                if (scrollView.contentOffset.y > 0) {
+//                    return;
+//                }
+//                if (scrollView.contentOffset.y < weakSelf.lastPoint.y) {
+//                    if (scrollView.contentOffset.y == 0) {
+//                        [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                            make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0);
+//                        }];
+//                    } else {
+//                        if (scrollView.contentOffset.y == -65.0) {
+//                            [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
+//                                [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                                    make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + fabs(ceil(scrollView.contentOffset.y)));
+//                                }];
+//                                [weakSelf.view layoutIfNeeded];
+//                            }];
+//                        } else {
+//                            [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                                make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + fabs(ceil(scrollView.contentOffset.y)));
+//                            }];
+//                        }
+//                    }
+//                } else {
+//                    [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
+//                        if (scrollView.contentOffset.y == 0) {
+//                            [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                                make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0);
+//                            }];
+//                        } else {
+//                            [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                                make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + fabs(ceil(scrollView.contentOffset.y)));
+//                            }];
+//                        }
+//                        [weakSelf.view layoutIfNeeded];
+//                    }];
+//                }
             };
             _homeVC.zxHomeTableWillBeginDragging = ^(UIScrollView * _Nonnull scrollView) {
                 weakSelf.lastPoint = scrollView.contentOffset;
             };
-            _homeVC.zxHomeTableFirstLoading = ^{
-                [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
-                    [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
-                        make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + 65.0);
-                    }];
-                }];
-            };
+//            _homeVC.zxHomeTableFirstLoading = ^{
+//                [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
+//                    [weakSelf.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                        make.height.mas_equalTo(NAVIGATION_HEIGHT + STATUS_HEIGHT + 152.0 + 65.0);
+//                    }];
+//                }];
+//            };
             [_homeVC setRealHome:self];
             if (prefetching) {
                 return nil;

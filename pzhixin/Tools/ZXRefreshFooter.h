@@ -1,18 +1,16 @@
 //
-//  ZXRefreshFooter.h
+//  ZXNewRefreshFooter.h
 //  pzhixin
 //
-//  Created by zhixin on 2019/10/9.
-//  Copyright © 2019 zhixin. All rights reserved.
+//  Created by zhixin on 2020/3/31.
+//  Copyright © 2020 zhixin. All rights reserved.
 //
 
-#import "MJRefreshAutoStateFooter.h"
+#import "MJRefreshAutoNormalFooter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZXRefreshFooter : MJRefreshAutoStateFooter
-
-@property (strong, nonatomic) UILabel *stateLab;
+@interface ZXRefreshFooter : MJRefreshAutoNormalFooter
 
 @end
 

@@ -230,9 +230,13 @@ typedef enum JSOpenPageId {
 
 #pragma mark - 接口地址
 
+#define ZX_FORMAL_SERVER_URI @"https://api.zzhwq.com"
+
+//#define ZX_FORMAL_SERVER_URI @"https://zzhwq.qieweb.com/api"
+
 //#define ZX_FORMAL_SERVER_URI @"https://api.pzhixin.com"
 
-#define ZX_FORMAL_SERVER_URI @"https://pzhixin.qieweb.com/api"
+//#define ZX_FORMAL_SERVER_URI @"https://pzhixin.qieweb.com/api"
 
 //微信登录
 #define WX_LOGIN @"/auth/wechat_login"
@@ -554,6 +558,7 @@ typedef enum JSOpenPageId {
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <TYCyclePagerView/TYCyclePagerView.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>
+#import <MJRefresh/MJRefresh.h>
 //#import <YBImageBrowser/YBImageBrowser.h>
 
 //腾讯广告联盟

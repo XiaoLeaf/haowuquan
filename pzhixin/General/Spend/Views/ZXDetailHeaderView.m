@@ -79,29 +79,32 @@
         }];
     }
     
-    NSString *currentStr = [NSString stringWithFormat:@"券后价￥%@",_goodsDetail.row.price];
-    NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:currentStr];
-    [priceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0 weight:UIFontWeightMedium] range:NSMakeRange(0, 4)];
-    [priceStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20.0] range:NSMakeRange(4, currentStr.length - 4)];
-    [self.currentPrice setAttributedText:priceStr];
+    if (![UtilsMacro whetherIsEmptyWithObject:_goodsDetail.row.price]) {
+        NSString *currentStr = [NSString stringWithFormat:@"券后价￥%@",_goodsDetail.row.price];
+        NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:currentStr];
+        [priceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0 weight:UIFontWeightMedium] range:NSMakeRange(0, 4)];
+        [priceStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20.0] range:NSMakeRange(4, currentStr.length - 4)];
+        [self.currentPrice setAttributedText:priceStr];
+    }
     
     NSString *originalStr = [NSString stringWithFormat:@"原价￥%@", _goodsDetail.row.ori_price];
 //    NSMutableAttributedString *originalAttri = [[NSMutableAttributedString alloc] initWithString:originalStr];
 //    [originalAttri addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(0, originalStr.length)];
     [self.originalPrice setText:originalStr];
     
-    NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_goodsDetail.row.title]]];
-    YYAnimatedImageView *imageView;
-    if ([_goodsDetail.row.shop_type integerValue] == 1) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
-    } else if ([_goodsDetail.row.shop_type integerValue] == 2) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+    if (![UtilsMacro whetherIsEmptyWithObject:_goodsDetail.row.title]) {
+        NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_goodsDetail.row.title]]];
+        YYAnimatedImageView *imageView;
+        if ([_goodsDetail.row.shop_type integerValue] == 1) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
+        } else if ([_goodsDetail.row.shop_type integerValue] == 2) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+        }
+        [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
+        NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
+        [nameAttri insertAttributedString:attachText atIndex:0];
+        [self.nameLabel setAttributedText:nameAttri];
     }
-    [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
-    NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
-    [nameAttri insertAttributedString:attachText atIndex:0];
-    [self.nameLabel setAttributedText:nameAttri];
-    [self.nameLabel setGoodsTitle:_goodsDetail.row.title];
     
     [self.commissionLabel setText:[NSString stringWithFormat:@"  奖 %@  ",_goodsDetail.row.commission]];
     [self.soldLab setText:[NSString stringWithFormat:@"已售%@", _goodsDetail.row.volume]];
@@ -384,7 +387,7 @@
     if (!_commissionLabel) {
         _commissionLabel = [[UILabel alloc] init];
         [_commissionLabel setTextColor:[UIColor whiteColor]];
-        [_commissionLabel setBackgroundColor:THEME_COLOR];
+        [_commissionLabel setBackgroundColor:[UtilsMacro colorWithHexString:@"FE560F"]];
         [_commissionLabel setFont:[UIFont systemFontOfSize:10.0]];
         [self.awardView addSubview:_commissionLabel];
         [_commissionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -410,7 +413,7 @@
     
     if (!_promoteView) {
         _promoteView = [[UIView alloc] init];
-        [_promoteView setBackgroundColor:[UtilsMacro colorWithHexString:@"FFF9F2"]];
+        [_promoteView setBackgroundColor:[UtilsMacro colorWithHexString:@"FFEEEE"]];
         [_promoteView setClipsToBounds:YES];
         [_promoteView.layer setCornerRadius:5.0];
         [_goodsView addSubview:_promoteView];
@@ -425,7 +428,7 @@
     if (!_promoteLab) {
         _promoteLab = [[UILabel alloc] init];
 //        [_promoteLab setText:@"升级最高奖励20.50"];
-        [_promoteLab setTextColor:[UtilsMacro colorWithHexString:@"FF6B2C"]];
+        [_promoteLab setTextColor:THEME_COLOR];
         [_promoteLab setFont:[UIFont systemFontOfSize:10.0]];
         [_promoteView addSubview:_promoteLab];
         [_promoteLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -541,7 +544,7 @@
     if (!_couponLab) {
         _couponLab = [[UILabel alloc] init];
         [_couponLab setTextColor:[UIColor whiteColor]];
-        [_couponLab setFont:[UIFont systemFontOfSize:30.0]];
+        [_couponLab setFont:[UIFont systemFontOfSize:28.0]];
 //        if ([UIDevice currentDevice].systemVersion.doubleValue >= 11.0) {
 //            [_couponLab setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
 //        } else {
@@ -559,7 +562,7 @@
     UIView *couponTipView = [[UIView alloc] init];
     [_couponContentView addSubview:couponTipView];
     [couponTipView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.couponLab.mas_right).mas_offset(15.0);
+        make.left.mas_equalTo(self.couponLab.mas_right).mas_offset(10.0);
         make.right.mas_equalTo(self.couponContentView);
         make.top.mas_equalTo(self.couponContentView);
         make.bottom.mas_equalTo(self.couponContentView);
@@ -567,7 +570,7 @@
 
     if (!_couponNameLab) {
         _couponNameLab = [[UILabel alloc] init];
-        [_couponNameLab setFont:[UIFont systemFontOfSize:12.0]];
+        [_couponNameLab setFont:[UIFont systemFontOfSize:9.0]];
         [_couponNameLab setTextColor:[UIColor whiteColor]];
         [couponTipView addSubview:_couponNameLab];
         [_couponNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -593,12 +596,30 @@
 
     if (!_fetchBtn) {
         _fetchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_fetchBtn setTitle:@"立即领取" forState:UIControlStateNormal];
+        [_fetchBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_fetchBtn.titleLabel setFont:[UIFont systemFontOfSize:15.0]];
         [_couponView addSubview:_fetchBtn];
         [_fetchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.mas_equalTo(12.0);
-            make.bottom.right.mas_equalTo(-12.0);
+            make.top.mas_equalTo(12.0);
+            make.right.mas_equalTo(-12.0);
+            make.bottom.mas_equalTo(-12.0);
+            make.width.mas_equalTo(100.0);
         }];
         [_fetchBtn addTarget:self action:@selector(handleTapFetchBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    if (!_dotImg) {
+        _dotImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"coupon_dot"]];
+        [_dotImg setContentMode:UIViewContentModeScaleAspectFit];
+        [_dotImg setClipsToBounds:YES];
+        [_couponView addSubview:_dotImg];
+        [_dotImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.fetchBtn.mas_left).mas_offset(0.0);
+            make.top.mas_equalTo(12.0);
+            make.bottom.mas_equalTo(-12.0);
+            make.width.mas_equalTo(20.0);
+        }];
     }
 
     if (!_shopView) {

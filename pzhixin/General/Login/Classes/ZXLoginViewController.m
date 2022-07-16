@@ -77,23 +77,24 @@
 
 - (void)createDealLabel {
     _dealLabel = [[YYLabel alloc] init];
+    _dealLabel.textAlignment = NSTextAlignmentCenter;
     [self.dealView addSubview:_dealLabel];
     [_dealLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.top.mas_equalTo(0.0);
     }];
     
     NSString *dealStr = [[[[ZXAppConfigHelper sharedInstance] appConfig] h5] agreement].txt;
-    
-    NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:dealStr];
-    
-    [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:9.0] range:NSMakeRange(0, dealStr.length)];
-    [attri addAttribute:NSForegroundColorAttributeName value:[UtilsMacro colorWithHexString:@"4B729D"] range:NSMakeRange(0, dealStr.length)];
-    
-    [attri yy_setTextHighlightRange:NSMakeRange(0, dealStr.length) color:[UtilsMacro colorWithHexString:@"4B729D"] backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
-        [[ZXRouters sharedInstance] openPageWithUrl:[NSString stringWithFormat:@"%@%@", URL_PREFIX, [[[[ZXAppConfigHelper sharedInstance] appConfig] h5] agreement].url_schema] andUserInfo:nil viewController:self];
-    }];
-    [_dealLabel setAttributedText:attri];
-    _dealLabel.textAlignment = NSTextAlignmentCenter;
+    if (![UtilsMacro whetherIsEmptyWithObject:dealStr]) {
+        NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:dealStr];
+        
+        [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:9.0] range:NSMakeRange(0, dealStr.length)];
+        [attri addAttribute:NSForegroundColorAttributeName value:[UtilsMacro colorWithHexString:@"4B729D"] range:NSMakeRange(0, dealStr.length)];
+        
+        [attri yy_setTextHighlightRange:NSMakeRange(0, dealStr.length) color:[UtilsMacro colorWithHexString:@"4B729D"] backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+            [[ZXRouters sharedInstance] openPageWithUrl:[NSString stringWithFormat:@"%@%@", URL_PREFIX, [[[[ZXAppConfigHelper sharedInstance] appConfig] h5] agreement].url_schema] andUserInfo:nil viewController:self];
+        }];
+        [_dealLabel setAttributedText:attri];
+    }
 }
 
 #pragma mark - Button Actions

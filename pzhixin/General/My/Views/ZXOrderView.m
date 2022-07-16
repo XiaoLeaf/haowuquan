@@ -100,7 +100,8 @@
     }
     if (!self.orderTableView.mj_header) {
         ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshOrderList)];
-        [refreshHeader.stateLab setTextColor:COLOR_999999];
+        [refreshHeader setTimeKey:[NSString stringWithFormat:@"ZXOrderView%@",[_paratemers valueForKey:@"status"]]];
+//        [refreshHeader.stateLab setTextColor:COLOR_999999];
         [self.orderTableView setMj_header:refreshHeader];
     }
     if (change) {

@@ -50,7 +50,8 @@
     // Do any additional setup after loading the view from its nib.
     
     _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchGoodsShareInfo)];
-    [_refreshHeader.stateLab setTextColor:COLOR_999999];
+    [_refreshHeader setTimeKey:@"ZXShareVC"];
+//    [_refreshHeader.stateLab setTextColor:COLOR_999999];
     _shareTable.mj_header = _refreshHeader;
     [ZXProgressHUD loadingNoMask];
     _isLoading = YES;
@@ -238,6 +239,9 @@
 }
 
 - (NSMutableAttributedString *)curPriceLabForImgWithStr:(NSString *)str {
+    if ([UtilsMacro whetherIsEmptyWithObject:str]) {
+        return [[NSMutableAttributedString alloc] initWithString:@""];
+    }
     NSString *tempStr = [NSString stringWithFormat:@"券后价￥%@",str];
     NSMutableAttributedString *attriStr = [[NSMutableAttributedString alloc] initWithString:tempStr];
     [attriStr addAttributes:@{NSForegroundColorAttributeName: [UtilsMacro colorWithHexString:@"C4002C"]} range:NSMakeRange(0, tempStr.length)];
@@ -248,6 +252,9 @@
 }
 
 - (NSMutableAttributedString *)oriPriceStrWithStr:(NSString *)str {
+    if ([UtilsMacro whetherIsEmptyWithObject:str]) {
+        return [[NSMutableAttributedString alloc] initWithString:@""];
+    }
     NSString *tempStr = [NSString stringWithFormat:@"原价￥%@",str];
     NSMutableAttributedString *attriStr = [[NSMutableAttributedString alloc] initWithString:tempStr];
     [attriStr addAttributes:@{NSForegroundColorAttributeName: COLOR_999999, NSFontAttributeName: [UIFont systemFontOfSize:22.0], NSStrikethroughStyleAttributeName : [NSNumber numberWithInteger:NSUnderlineStyleThick]} range:NSMakeRange(0, tempStr.length)];

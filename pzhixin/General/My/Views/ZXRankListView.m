@@ -80,7 +80,8 @@
             make.left.right.top.bottom.mas_equalTo(0.0);
         }];
         ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshRanking)];
-        [refreshHeader.stateLab setTextColor:COLOR_999999];
+        [refreshHeader setTimeKey:[NSString stringWithFormat:@"ZXRankListView-%@",self.timeKey]];
+//        [refreshHeader.stateLab setTextColor:COLOR_999999];
         [_rankListTable setMj_header:refreshHeader];
     }
 }

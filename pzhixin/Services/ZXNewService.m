@@ -74,7 +74,7 @@ static AFHTTPSessionManager *sessionManager = nil;
         [inParameters addEntriesFromDictionary:@{@"imei":imeiStr}];
     }
     
-    [inParameters addEntriesFromDictionary:@{@"token":[UtilsMacro sha1WithString:[NSString stringWithFormat:@"%@%@",[UtilsMacro MD5ForLower32Bate:[UtilsMacro sortedDictionary:inParameters]],[UtilsMacro MD5ForLower32Bate:@"PZhiXin"]]]}];
+    [inParameters addEntriesFromDictionary:@{@"token":[UtilsMacro sha1WithString:[NSString stringWithFormat:@"%@%@",[UtilsMacro MD5ForLower32Bate:[UtilsMacro sortedDictionary:inParameters]],[UtilsMacro MD5ForLower32Bate:@"com.cB.zzHwq"]]]}];
     
 //    NSLog(@"inParameters:%@",[UtilsMacro DataTOjsonString:inParameters]);
     
@@ -177,6 +177,11 @@ static AFHTTPSessionManager *sessionManager = nil;
             return;
         }
         if (error.code == -999) {
+            ZXResponse *response = [[ZXResponse alloc] init];
+            [response setInfo:@"请求失败"];
+            [response setData:@{}];
+            [response setStatus:error.code];
+            errorBlock(response);
             return;
         }
         ZXResponse *response = [[ZXResponse alloc] init];

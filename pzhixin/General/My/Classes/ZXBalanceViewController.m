@@ -74,7 +74,8 @@
     [self.balanceTableView setEmptyDataSetDelegate:self];
     
     ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshUdMoney)];
-    [refreshHeader.stateLab setTextColor:COLOR_999999];
+//    [refreshHeader.stateLab setTextColor:COLOR_999999];
+    [refreshHeader setTimeKey:@"ZXBalanceViewController"];
     [self.balanceTableView setMj_header:refreshHeader];
     [self.balanceTableView.mj_header beginRefreshing];
 }

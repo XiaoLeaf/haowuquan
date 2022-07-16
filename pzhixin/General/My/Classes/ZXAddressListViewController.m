@@ -34,7 +34,8 @@
     // Do any additional setup after loading the view from its nib.
     
     _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshAddressList)];
-    [_refreshHeader.stateLab setTextColor:COLOR_999999];
+//    [_refreshHeader.stateLab setTextColor:COLOR_999999];
+    [_refreshHeader setTimeKey:@"ZXAddressListViewController"];
     self.addressListTableView.mj_header = _refreshHeader;
     [_refreshHeader beginRefreshing];
     

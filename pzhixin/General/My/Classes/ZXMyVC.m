@@ -226,6 +226,7 @@
         
         _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(myInfoMJRefresh)];
         [_refreshHeader setLight:YES];
+        [_refreshHeader setTimeKey:@"ZXMyVC"];
         [_myTable setMj_header:_refreshHeader];
         [_refreshHeader beginRefreshing];
         

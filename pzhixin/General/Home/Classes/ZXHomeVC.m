@@ -96,7 +96,9 @@
     [_homeTable tab_startAnimation];
     
     _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchIndexStart)];
+    [_refreshHeader setTimeKey:@"ZXHomeVC"];
     [_refreshHeader setLight:YES];
+//    [_refreshHeader setLight:YES];
     self.homeTable.mj_header = _refreshHeader;
     if (self.zxHomeTableFirstLoading) {
         self.zxHomeTableFirstLoading();
@@ -717,22 +719,22 @@
 
 #pragma mark - UIScrollViewDelegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == _homeTable) {
-        if (scrollView.contentOffset.y >= 190.0) {
-            [_bannerCell.bannerView setAutoScroll:NO];
-        } else {
-            if (scrollView.isDragging) {
-                [_bannerCell.bannerView setAutoScroll:NO];
-            } else {
-                [_bannerCell.bannerView setAutoScroll:YES];
-            }
-        }
-        if (self.zxHomeTableDidScroll) {
-            self.zxHomeTableDidScroll(scrollView);
-        }
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    if (scrollView == _homeTable) {
+//        if (scrollView.contentOffset.y >= 190.0) {
+//            [_bannerCell.bannerView setAutoScroll:NO];
+//        } else {
+//            if (scrollView.isDragging) {
+//                [_bannerCell.bannerView setAutoScroll:NO];
+//            } else {
+//                [_bannerCell.bannerView setAutoScroll:YES];
+//            }
+//        }
+//        if (self.zxHomeTableDidScroll) {
+//            self.zxHomeTableDidScroll(scrollView);
+//        }
+//    }
+//}
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if (self.zxHomeTableWillBeginDragging) {
@@ -743,15 +745,15 @@
     }
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (scrollView == _homeTable) {
-        if (scrollView.contentOffset.y >= 190.0) {
-            [_bannerCell.bannerView setAutoScroll:NO];
-        } else {
-            [_bannerCell.bannerView setAutoScroll:YES];
-        }
-    }
-}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+//    if (scrollView == _homeTable) {
+//        if (scrollView.contentOffset.y >= 190.0) {
+//            [_bannerCell.bannerView setAutoScroll:NO];
+//        } else {
+//            [_bannerCell.bannerView setAutoScroll:YES];
+//        }
+//    }
+//}
 
 #pragma mark - Button Method
 

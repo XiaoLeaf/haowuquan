@@ -1,20 +1,12 @@
 //
-//  ZXRefreshHeader.m
+//  ZXNewRefreshHeader.m
 //  pzhixin
 //
-//  Created by zhixin on 2019/10/8.
-//  Copyright © 2019 zhixin. All rights reserved.
+//  Created by zhixin on 2020/3/31.
+//  Copyright © 2020 zhixin. All rights reserved.
 //
 
 #import "ZXRefreshHeader.h"
-#import <SDWebImage/UIImage+GIF.h>
-#import <Masonry/Masonry.h>
-
-@interface ZXRefreshHeader ()
-
-@property (strong, nonatomic) UIImage *gifImg;
-
-@end
 
 @implementation ZXRefreshHeader
 
@@ -28,70 +20,22 @@
 
 - (void)prepare {
     [super prepare];
-    
     self.mj_h = 65.0;
-    
-    _loadingImg = [[UIImageView alloc] init];
-    [_loadingImg setContentMode:UIViewContentModeScaleAspectFit];
-    [_loadingImg setClipsToBounds:YES];
-    [self addSubview:_loadingImg];
-    
-    _stateLab = [[UILabel alloc] init];
-    [_stateLab setTextColor:[UIColor whiteColor]];
-    [_stateLab setTextAlignment:NSTextAlignmentCenter];
-    [_stateLab setFont:[UIFont systemFontOfSize:10.0]];
-    [self addSubview:_stateLab];
-    
-    NSString *gifPath = [[NSBundle mainBundle] pathForResource:@"header" ofType:@"gif"];
-    NSData *gifData = [NSData dataWithContentsOfFile:gifPath];
-    _gifImg = [UIImage sd_imageWithGIFData:gifData];
-    [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] loading_dark]] placeholderImage:_gifImg];
 }
 
-- (void)placeSubviews {
-    [super placeSubviews];
-    
-    [_stateLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(0.0);
-        make.bottom.mas_equalTo(-5.0);
-        make.height.mas_equalTo(10.0);
-    }];
-    
-    [_loadingImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.stateLab.mas_top).mas_offset(-5.0);
-        make.top.mas_equalTo(10.0);
-        make.left.right.mas_equalTo(0.0);
-    }];
-    
-    [self.stateLabel setHidden:YES];
-    [self.lastUpdatedTimeLabel setHidden:YES];
-}
+#pragma mark -  setter
 
-- (void)setTopMargin:(CGFloat)topMargin {
-    [_loadingImg mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.stateLab.mas_top).mas_offset(-5.0);
-        make.top.mas_equalTo(10.0 + topMargin);
-        make.left.right.mas_equalTo(0.0);
-    }];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
-    [self layoutSubviews];
+- (void)setTimeKey:(NSString *)timeKey {
+    _timeKey = timeKey;
+    [self setLastUpdatedTimeKey:_timeKey];
 }
-
-#pragma mark - Setter
 
 - (void)setLight:(BOOL)light {
     _light = light;
     if (_light) {
-        NSString *gifPath = [[NSBundle mainBundle] pathForResource:@"header_white" ofType:@"gif"];
-        NSData *gifData = [NSData dataWithContentsOfFile:gifPath];
-        _gifImg = [UIImage sd_imageWithGIFData:gifData];
-        [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] loading_light]] placeholderImage:_gifImg];
-    } else {
-        NSString *gifPath = [[NSBundle mainBundle] pathForResource:@"header" ofType:@"gif"];
-        NSData *gifData = [NSData dataWithContentsOfFile:gifPath];
-        _gifImg = [UIImage sd_imageWithGIFData:gifData];
-        [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] loading_dark]] placeholderImage:_gifImg];
+        [self.loadingView setColor:[UIColor whiteColor]];
+        [self.lastUpdatedTimeLabel setTextColor:[UIColor whiteColor]];
+        [self.stateLabel setTextColor:[UIColor whiteColor]];
     }
 }
 
@@ -120,39 +64,14 @@
     switch (state) {
         case MJRefreshStateIdle:
         {
-            if (_light) {
-                [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] load_light]] placeholderImage:[UIImage imageNamed:@"header_white"]];
-            } else {
-                [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] load_dark]] placeholderImage:[UIImage imageNamed:@"header"]];
-            }
             if (oldState == MJRefreshStateRefreshing) {
-                self.stateLab.text = @"刷新完成";
+                self.stateLabel.text = @"刷新完成";
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJRefreshFastAnimationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    self.stateLab.text = @"下拉刷新";
+                    self.stateLabel.text = @"下拉刷新";
                 });
             } else {
-                self.stateLab.text = @"下拉刷新";
+                self.stateLabel.text = @"下拉刷新";
             }
-        }
-            break;
-        case MJRefreshStatePulling:
-        {
-            if (_light) {
-                [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] load_light]] placeholderImage:[UIImage imageNamed:@"header_white"]];
-            } else {
-                [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] load_dark]] placeholderImage:[UIImage imageNamed:@"header"]];
-            }
-            self.stateLab.text = @"松开刷新";
-        }
-            break;
-        case MJRefreshStateRefreshing:
-        {
-            if (_light) {
-                [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] loading_light]] placeholderImage:_gifImg];
-            } else {
-                [self.loadingImg sd_setImageWithURL:[NSURL URLWithString:[[[[ZXAppConfigHelper sharedInstance] appConfig] img_res] loading_dark]] placeholderImage:_gifImg];
-            }
-            self.stateLab.text = @"加载中";
         }
             break;
         default:

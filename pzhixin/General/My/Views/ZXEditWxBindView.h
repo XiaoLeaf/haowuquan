@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZXEditWxBindView : UIView
 
+@property (weak, nonatomic) IBOutlet UIImageView *logoImg;
 @property (weak, nonatomic) IBOutlet UIImageView *userHeadImg;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIView *bindedView;

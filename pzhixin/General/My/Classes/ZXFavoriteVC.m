@@ -136,7 +136,8 @@
     }];
     
     ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshFavoriteList)];
-    [refreshHeader.stateLab setTextColor:COLOR_999999];
+    [refreshHeader setTimeKey:@"ZXFavoriteVC"];
+//    [refreshHeader.stateLab setTextColor:COLOR_999999];
     _favoriteTableView.mj_header = refreshHeader;
     
     _favoriteTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[ZXFavoriteCell class] cellHeight:116.0];

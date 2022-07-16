@@ -139,6 +139,7 @@
     
     _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshIndexStart)];
     [_refreshHeader setLight:YES];
+    [_refreshHeader setTimeKey:@"ZXScoreViewController"];
     scoreTableView.mj_header = _refreshHeader;
     
     [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{

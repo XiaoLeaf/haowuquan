@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,34 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start_bg.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCs-2O-OPe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start_launch.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCs-2O-OPe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start_box.png" translatesAutoresizingMaskIntoConstraints="NO" id="oxE-L0-QZK">
-                                <rect key="frame" x="0.0" y="504" width="375" height="164"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oxE-L0-QZK" secondAttribute="height" multiplier="375:164" id="73x-qs-Kwg"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Olf-63-yMd">
-                                <rect key="frame" x="125" y="590" width="125" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Llm-zX-sIe"/>
-                                    <constraint firstAttribute="width" constant="125" id="NSl-CX-hE6"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VCs-2O-OPe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9E6-8S-G8r"/>
-                            <constraint firstAttribute="bottom" secondItem="Olf-63-yMd" secondAttribute="bottom" constant="37" id="Opz-Ai-lyh"/>
-                            <constraint firstItem="oxE-L0-QZK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OvK-wD-jmC"/>
                             <constraint firstItem="VCs-2O-OPe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T8q-G7-IiB"/>
                             <constraint firstItem="VCs-2O-OPe" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="V4e-JX-9vw"/>
-                            <constraint firstItem="Olf-63-yMd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vjq-Bc-YqN"/>
                             <constraint firstAttribute="bottom" secondItem="VCs-2O-OPe" secondAttribute="bottom" id="YTy-A6-8h4"/>
-                            <constraint firstItem="oxE-L0-QZK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g7c-pk-Mt7"/>
-                            <constraint firstItem="oxE-L0-QZK" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" constant="1" id="iU7-zb-osv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -54,8 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="index_logo.png" width="125" height="40"/>
-        <image name="start_bg.png" width="375" height="667"/>
-        <image name="start_box.png" width="375" height="165"/>
+        <image name="start_launch.png" width="750" height="1334"/>
     </resources>
 </document>

@@ -110,7 +110,8 @@
     }
     if (!self.detailTable.mj_header) {
         ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshProfitList)];
-        [refreshHeader.stateLab setTextColor:COLOR_999999];
+        [refreshHeader setTimeKey:[NSString stringWithFormat:@"ZXEarningDetailView%zd",self.tag]];
+//        [refreshHeader.stateLab setTextColor:COLOR_999999];
         [self.detailTable setMj_header:refreshHeader];
     }
     if (change) {

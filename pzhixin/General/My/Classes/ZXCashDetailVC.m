@@ -35,7 +35,8 @@
     [self.detailTable setEmptyDataSetDelegate:self];
     
     ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshCashList)];
-    [refreshHeader.stateLab setTextColor:COLOR_999999];
+    [refreshHeader setTimeKey:@"ZXCashDetailVC"];
+//    [refreshHeader.stateLab setTextColor:COLOR_999999];
     self.detailTable.mj_header = refreshHeader;
     [self refreshCashList];
 }

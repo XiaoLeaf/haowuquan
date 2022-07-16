@@ -95,7 +95,7 @@
 
 - (void)fetchCommunityCats {
     [[ZXCommunityListHelper sharedInstance] fetchCommunityListWithPage:@"1" andFid:@"0" andCid:@"0" andKeyword:@"" completion:^(ZXResponse * _Nonnull response) {
-        NSLog(@"response====>%@",response.data);
+//        NSLog(@"response====>%@",response.data);
         [ZXProgressHUD hideAllHUD];
         self.catList = [[NSMutableArray alloc] init];
         NSArray *cats = [response.data valueForKey:@"cats"];

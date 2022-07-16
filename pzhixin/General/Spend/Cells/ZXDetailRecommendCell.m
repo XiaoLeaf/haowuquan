@@ -47,9 +47,11 @@
     }];
     [self.nameLabel setText:_goods.title];
     
-    NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"￥%@ 券后",_goods.price]];
-    [priceStr addAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:10.0]} range:NSMakeRange(priceStr.length - 2, 2)];
-    [self.priceLabel setAttributedText:priceStr];
+    if (![UtilsMacro whetherIsEmptyWithObject:_goods.price]) {
+        NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"￥%@ 券后",_goods.price]];
+        [priceStr addAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:10.0]} range:NSMakeRange(priceStr.length - 2, 2)];
+        [self.priceLabel setAttributedText:priceStr];
+    }
 }
 
 @end

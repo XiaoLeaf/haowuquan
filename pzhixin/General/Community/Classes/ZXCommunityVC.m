@@ -44,7 +44,8 @@
     [self.communityTable registerClass:[ZXCommunityStoreCell class] forCellReuseIdentifier:@"ZXCommunityStoreCell"];
     [self.communityTable registerClass:[ZXCommunityNewCell class] forCellReuseIdentifier:@"ZXCommunityNewCell"];
     _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshCommunityList)];
-    [_refreshHeader.stateLab setTextColor:COLOR_999999];
+    [_refreshHeader setTimeKey:[NSString stringWithFormat:@"ZXCommunityVC%@",_communityCat.cid]];
+//    [_refreshHeader.stateLab setTextColor:COLOR_999999];
     [self.communityTable setMj_header:_refreshHeader];
     _refreshFooter = [ZXRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreCommunityList)];
     [_refreshHeader beginRefreshing];

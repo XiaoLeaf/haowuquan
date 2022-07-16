@@ -143,28 +143,34 @@
         
     }];
     
-    NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_leftGoods.title]]];
-    YYAnimatedImageView *imageView;
-    if ([_leftGoods.store_type integerValue] == 1) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
-    } else if ([_leftGoods.store_type integerValue] == 2) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+    if (![UtilsMacro whetherIsEmptyWithObject:_leftGoods.title]) {
+        NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_leftGoods.title]]];
+        YYAnimatedImageView *imageView;
+        if ([_leftGoods.store_type integerValue] == 1) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
+        } else if ([_leftGoods.store_type integerValue] == 2) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+        }
+        [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
+        NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
+        [nameAttri insertAttributedString:attachText atIndex:0];
+        [self.leftName setAttributedText:nameAttri];
     }
-    [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
-    NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
-    [nameAttri insertAttributedString:attachText atIndex:0];
-    [self.leftName setAttributedText:nameAttri];
     
-    NSString *current = [NSString stringWithFormat:@"￥%@", _leftGoods.price];
-    NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:current];
-    [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13.0] range:NSMakeRange(0, 1)];
-    [attri addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15.0] range:NSMakeRange(1, current.length - 1)];
-    [self.leftCurrent setAttributedText:attri];
+    if (![UtilsMacro whetherIsEmptyWithObject:_leftGoods.price]) {
+        NSString *current = [NSString stringWithFormat:@"￥%@", _leftGoods.price];
+        NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:current];
+        [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13.0] range:NSMakeRange(0, 1)];
+        [attri addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15.0] range:NSMakeRange(1, current.length - 1)];
+        [self.leftCurrent setAttributedText:attri];
+    }
     
-    NSString *originalStr = [NSString stringWithFormat:@"￥%@",_leftGoods.zk_price];
-    NSMutableAttributedString *originalAttri = [[NSMutableAttributedString alloc] initWithString:originalStr];
-    [originalAttri addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(0, originalStr.length)];
-    [self.leftOrignal setText:originalStr];
+    if (![UtilsMacro whetherIsEmptyWithObject:_leftGoods.zk_price]) {
+        NSString *originalStr = [NSString stringWithFormat:@"￥%@",_leftGoods.zk_price];
+        NSMutableAttributedString *originalAttri = [[NSMutableAttributedString alloc] initWithString:originalStr];
+        [originalAttri addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(0, originalStr.length)];
+        [self.leftOrignal setText:originalStr];
+    }
     
     [self.leftCount setText:[NSString stringWithFormat:@"已售%@", _leftGoods.volume]];
     
@@ -188,28 +194,34 @@
         
     }];
     
-    NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_rightGoods.title]]];
-    YYAnimatedImageView *imageView;
-    if ([_rightGoods.store_type integerValue] == 1) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
-    } else if ([_rightGoods.store_type integerValue] == 2) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+    if (![UtilsMacro whetherIsEmptyWithObject:_rightGoods.title]) {
+        NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_rightGoods.title]]];
+        YYAnimatedImageView *imageView;
+        if ([_rightGoods.store_type integerValue] == 1) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
+        } else if ([_rightGoods.store_type integerValue] == 2) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+        }
+        [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
+        NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
+        [nameAttri insertAttributedString:attachText atIndex:0];
+        [self.rightName setAttributedText:nameAttri];
     }
-    [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
-    NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:13.0] alignment:YYTextVerticalAlignmentCenter];
-    [nameAttri insertAttributedString:attachText atIndex:0];
-    [self.rightName setAttributedText:nameAttri];
     
-    NSString *current = [NSString stringWithFormat:@"￥%@", _rightGoods.price];
-    NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:current];
-    [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13.0] range:NSMakeRange(0, 1)];
-    [attri addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15.0] range:NSMakeRange(1, current.length - 1)];
-    [self.rightCurrent setAttributedText:attri];
+    if (![UtilsMacro whetherIsEmptyWithObject:_rightGoods.price]) {
+        NSString *current = [NSString stringWithFormat:@"￥%@", _rightGoods.price];
+        NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:current];
+        [attri addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13.0] range:NSMakeRange(0, 1)];
+        [attri addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15.0] range:NSMakeRange(1, current.length - 1)];
+        [self.rightCurrent setAttributedText:attri];
+    }
     
-    NSString *originalStr = [NSString stringWithFormat:@"￥%@",_rightGoods.zk_price];
-    NSMutableAttributedString *originalAttri = [[NSMutableAttributedString alloc] initWithString:originalStr];
-    [originalAttri addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(0, originalStr.length)];
-    [self.rightOrignal setText:originalStr];
+    if (![UtilsMacro whetherIsEmptyWithObject:_rightGoods.zk_price]) {
+        NSString *originalStr = [NSString stringWithFormat:@"￥%@",_rightGoods.zk_price];
+        NSMutableAttributedString *originalAttri = [[NSMutableAttributedString alloc] initWithString:originalStr];
+        [originalAttri addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleThick] range:NSMakeRange(0, originalStr.length)];
+        [self.rightOrignal setText:originalStr];
+    }
     
     [self.rightCount setText:[NSString stringWithFormat:@"已售%@", _rightGoods.volume]];
     

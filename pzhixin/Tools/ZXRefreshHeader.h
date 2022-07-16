@@ -1,22 +1,18 @@
 //
-//  ZXRefreshHeader.h
+//  ZXNewRefreshHeader.h
 //  pzhixin
 //
-//  Created by zhixin on 2019/10/8.
-//  Copyright © 2019 zhixin. All rights reserved.
+//  Created by zhixin on 2020/3/31.
+//  Copyright © 2020 zhixin. All rights reserved.
 //
 
-#import "MJRefreshGifHeader.h"
+#import "MJRefreshNormalHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZXRefreshHeader : MJRefreshGifHeader
+@interface ZXRefreshHeader : MJRefreshNormalHeader
 
-@property (strong,  nonatomic) UIImageView *loadingImg;
-
-@property (strong, nonatomic) UILabel *stateLab;
-
-@property (assign, nonatomic) CGFloat topMargin;
+@property (strong, nonatomic) NSString *timeKey;
 
 @property (assign, nonatomic) BOOL light;
 

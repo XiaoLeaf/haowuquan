@@ -61,6 +61,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UIButton *fetchBtn;
 
+@property (strong, nonatomic) UIImageView *dotImg;
+
 @property (strong, nonatomic) UIView *couponContentView;
 
 @property (strong, nonatomic) UIImageView *couponTipImg;

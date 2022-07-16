@@ -18,6 +18,8 @@ typedef void(^ZXRankListViewDidScroll)(UIScrollView *scrollView);
 
 @property (strong, nonatomic) NSString *type;
 
+@property (strong, nonatomic) NSString *timeKey;
+
 @property (strong, nonatomic) NSArray *defaultResult;
 
 @property (assign, nonatomic) BOOL isDefault;

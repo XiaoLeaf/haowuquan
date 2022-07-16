@@ -126,8 +126,9 @@
         }
         
         _refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshGoodsSubject)];
+        [_refreshHeader setTimeKey:[NSString stringWithFormat:@"ZXSpecialVC%@",_sid]];
         _refreshFooter = [ZXRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreGoodsSubject)];
-        [_refreshHeader.stateLab setTextColor:COLOR_999999];
+//        [_refreshHeader.stateLab setTextColor:COLOR_999999];
         _specialTable.mj_header = _refreshHeader;
         if (_subjectResult) {
             _goodsList = [[NSMutableArray alloc] initWithArray:_subjectResult.list];

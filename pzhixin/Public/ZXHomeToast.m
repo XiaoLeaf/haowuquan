@@ -58,23 +58,27 @@
     } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         
     }];
-        
-    NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_commonSearch.title]]];
-    YYAnimatedImageView *imageView;
-    if ([_commonSearch.shop_type integerValue] == 1) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
-    } else if ([_commonSearch.shop_type integerValue] == 2) {
-        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
-    }
-    imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
-    [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
-    NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:14.0 weight:UIFontWeightMedium] alignment:YYTextVerticalAlignmentCenter];
-    [nameAttri insertAttributedString:attachText atIndex:0];
-    [_nameLab setAttributedText:nameAttri];
     
-    NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"券后价￥%@",_commonSearch.price]];
-    [priceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0 weight:UIFontWeightMedium] range:NSMakeRange(0, 4)];
-    [_priceLab setAttributedText:priceStr];
+    if (![UtilsMacro whetherIsEmptyWithObject:_commonSearch.title]) {
+        NSMutableAttributedString *nameAttri = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",_commonSearch.title]]];
+        YYAnimatedImageView *imageView;
+        if ([_commonSearch.shop_type integerValue] == 1) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
+        } else if ([_commonSearch.shop_type integerValue] == 2) {
+            imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"taobao_flag"]];
+        }
+        imageView = [[YYAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"tmall_flag"]];
+        [imageView setFrame:CGRectMake(0.0, 0.0, 25.0, 14.0)];
+        NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeScaleAspectFit attachmentSize:imageView.frame.size alignToFont:[UIFont systemFontOfSize:14.0 weight:UIFontWeightMedium] alignment:YYTextVerticalAlignmentCenter];
+        [nameAttri insertAttributedString:attachText atIndex:0];
+        [_nameLab setAttributedText:nameAttri];
+    }
+    
+    if (![UtilsMacro whetherIsEmptyWithObject:_commonSearch.price]) {
+        NSMutableAttributedString *priceStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"券后价￥%@",_commonSearch.price]];
+        [priceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0 weight:UIFontWeightMedium] range:NSMakeRange(0, 4)];
+        [_priceLab setAttributedText:priceStr];
+    }
     
     [_couponLab setText:[NSString stringWithFormat:@" 券 %@ 元   ", _commonSearch.coupon_amount]];
     [_awardLab setText:[NSString stringWithFormat:@" 最高奖 %@   ",_commonSearch.max_commission]];

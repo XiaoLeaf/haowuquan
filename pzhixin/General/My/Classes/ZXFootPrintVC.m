@@ -107,7 +107,8 @@
     }];
     
     ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshFootPrint)];
-    [refreshHeader.stateLab setTextColor:COLOR_999999];
+    [refreshHeader setTimeKey:@"ZXFootPrintVC"];
+//    [refreshHeader.stateLab setTextColor:COLOR_999999];
     _footPrintTable.mj_header = refreshHeader;
     
     _footPrintTable.tabAnimated = [TABTableAnimated animatedWithCellClass:[ZXFavoriteCell class] cellHeight:116.0];

@@ -60,9 +60,9 @@
     self.topBtnBottom.constant = 0.15 * SCREENHEIGHT;
     _sortType = TOTAL_SALES_DES;
     [self.spendTable setBackgroundColor:BG_COLOR];
-    [self.spendTable setEstimatedRowHeight:0.0];
-    [self.spendTable setEstimatedSectionFooterHeight:0.0];
-    [self.spendTable setEstimatedSectionHeaderHeight:0.0];
+    [self.spendTable setEstimatedRowHeight:0];
+    [self.spendTable setEstimatedSectionFooterHeight:0];
+    [self.spendTable setEstimatedSectionHeaderHeight:0];
     
     TABTableAnimated *tableAnimated = [TABTableAnimated animatedWithCellClassArray:@[[ZXSpendCatsSkele class], [ZXSpendSortSkele class], [ZXDoubleSkeleCell class]] cellHeightArray:@[[NSNumber numberWithFloat:180.0], [NSNumber numberWithFloat:41.0], [NSNumber numberWithFloat:(SCREENWIDTH - 15.0)/2.0 + 110.0]] animatedCountArray:@[[NSNumber numberWithInt:1], [NSNumber numberWithInt:1], [NSNumber numberWithInt:10]]];
     tableAnimated.animatedBackgroundColor = [UIColor whiteColor];
@@ -98,7 +98,8 @@
     [self.spendTable tab_startAnimation];
     
     ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshSubSpendInfo)];
-    [refreshHeader.stateLab setTextColor:COLOR_999999];
+    [refreshHeader setTimeKey:[NSString stringWithFormat:@"ZXSpendViewController%zd",_sortId]];
+//    [refreshHeader.stateLab setTextColor:COLOR_999999];
     self.spendTable.mj_header = refreshHeader;
     [self.spendTable.mj_header beginRefreshing];
 }
@@ -717,6 +718,7 @@
 - (IBAction)handleTapTopBtnAction:(id)sender {
     [self.topBtn setHidden:YES];
     [self.spendTable setContentOffset:CGPointMake(0.0, 0.0) animated:YES];
+    [self.spendTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 @end

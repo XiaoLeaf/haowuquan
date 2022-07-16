@@ -78,7 +78,8 @@
         [_customNav.searchTextField setText:searchStr];
     } else {
         ZXRefreshHeader *refreshHeader = [ZXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshSearchResult)];
-        [refreshHeader.stateLab setTextColor:COLOR_999999];
+        [refreshHeader setTimeKey:@"ZXSearchResultViewController"];
+//        [refreshHeader.stateLab setTextColor:COLOR_999999];
         self.resultCollectionView.mj_header = refreshHeader;
         if ([goodsList count] <= 0) {
             [self.resultCollectionView.mj_header beginRefreshing];

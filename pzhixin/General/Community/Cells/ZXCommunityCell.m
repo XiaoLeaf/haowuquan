@@ -53,8 +53,11 @@
     _communityInfo = communityInfo;
     
     NSString *content = [_communityInfo objectForKey:@"content"];
-    NSMutableAttributedString *contentStr = [[NSMutableAttributedString alloc] initWithString:content];
-    [contentStr addAttributes:[UtilsMacro contentAttributes] range:NSMakeRange(0, contentStr.length)];
+    if (![UtilsMacro whetherIsEmptyWithObject:content]) {
+        NSMutableAttributedString *contentStr = [[NSMutableAttributedString alloc] initWithString:content];
+        [contentStr addAttributes:[UtilsMacro contentAttributes] range:NSMakeRange(0, contentStr.length)];
+        [_contentLabel setAttributedText:contentStr];
+    }
     
     [UtilsMacro zxSD_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",[_communityInfo objectForKey:@"icon"]]] imageView:_headImg placeholderImage:[UtilsMacro big_placeHolder] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         
@@ -63,7 +66,6 @@
     }];
     [_nameLabel setText:[NSString stringWithFormat:@"%@",[_communityInfo objectForKey:@"name"]]];
     [_timeLabel setText:[NSString stringWithFormat:@"%@",[_communityInfo objectForKey:@"time"]]];
-    [_contentLabel setAttributedText:contentStr];
     [_commentLabel setText:@"自购/分享，预估得【 2.91】\n 限时抢途径:好物券app首页—好店 \n 搜索关键词【捞旺】"];
     [_shareBtn setTitle:[NSString stringWithFormat:@"%@",[_communityInfo objectForKey:@"share"]] forState:UIControlStateNormal];
     
